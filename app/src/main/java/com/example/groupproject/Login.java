@@ -17,20 +17,20 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText user = findViewById(R.id.user);
-        final EditText pass = findViewById(R.id.pass);
-        final Button signin = findViewById(R.id.signin);
-        final TextView register = findViewById(R.id.register);
+        EditText user = findViewById(R.id.user);
+        EditText pass = findViewById(R.id.pass);
+        Button signin = findViewById(R.id.signin);
+        TextView register = findViewById(R.id.register);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                final String usertext = user.getText().toString();
-                final String passtext = pass.getText().toString();
+                String usertext = user.getText().toString();
+                String passtext = pass.getText().toString();
 
                 if(usertext.isEmpty() || passtext.isEmpty())
                 {
-                    Toast.makeText(Login.this, "please enter your username or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "please enter your username or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
