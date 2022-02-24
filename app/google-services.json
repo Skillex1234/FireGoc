@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "162029316678",
+    "project_id": "fire-groceries-514d0",
+    "storage_bucket": "fire-groceries-514d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162029316678:android:966571906108f11fc47847",
+        "android_client_info": {
+          "package_name": "com.example.groupproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162029316678-3u1fqqjhkhof0v278ijrspr04k1epa4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.groupproject",
+            "certificate_hash": "eecb5b37429399430d9163acb156d66615357e81"
+          }
+        },
+        {
+          "client_id": "162029316678-25quph1g3m8dgrldv3degen9a3n5jrg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsmcLYx88ZnpiHT40qAbwoHVRkfyJeJtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162029316678-25quph1g3m8dgrldv3degen9a3n5jrg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
