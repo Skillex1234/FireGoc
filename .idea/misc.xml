@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_login.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_main.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_register.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/Owner/Desktop/GroupProject/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Owner/Desktop/GroupProject/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Owner/Desktop/GroupProject/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.2630208333333333" />
       </map>
     </option>
   </component>
