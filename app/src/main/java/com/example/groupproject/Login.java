@@ -24,7 +24,6 @@ public class Login extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final String usertext = user.getText().toString();
                 final String passtext = pass.getText().toString();
 
