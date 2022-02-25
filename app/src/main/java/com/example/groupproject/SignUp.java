@@ -16,71 +16,60 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class SignUp extends AppCompatActivity {
+    
+    EditText user, email, phone, password;
+    Button signup;
+    DatabaseReference databaseReference;
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://fire-groceries-514d0-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        final EditText user = findViewById(R.id.user);
-        final EditText email = findViewById(R.id.email);
-        final EditText phone = findViewById(R.id.phone);
-        final EditText password = findViewById(R.id.password);
-        final EditText confirm_password = findViewById(R.id.confirm_pass);
-        final Button signup = findViewById(R.id.signup);
+        user = findViewById(R.id.user);
+        email = findViewById(R.id.email);
+        phone = findViewById(R.id.phone);
+        password = findViewById(R.id.password);
+        signup = findViewById(R.id.signup);
 
 
-            signup.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final String userTxt = user.getText().toString();
-                    final String emailTxt = email.getText().toString();
-                    final String phoneTxt = phone.getText().toString();
-                    final String passwordTxt = password.getText().toString();
-                    final String confirm_passwordTxt = confirm_password.getText().toString();
-
-                    if(userTxt.isEmpty()||emailTxt.isEmpty()|| phoneTxt.isEmpty()||passwordTxt.isEmpty()||confirm_passwordTxt.isEmpty()){
-                        Toast.makeText(getApplicationContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show();
-                    }
-                    else if(!passwordTxt.equals(confirm_passwordTxt)){
-                        Toast.makeText(getApplicationContext(), "Passwords not matching", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-
-                        databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                if(snapshot.hasChild(userTxt)){
-                                    Toast.makeText(SignUp.this, "this username is already used", Toast.LENGTH_SHORT).show();
-                                }
-                                else{
-                                    databaseReference.child("users").child(userTxt).child("username").setValue(userTxt);
-                                    databaseReference.child("users").child(userTxt).child("email").setValue(emailTxt);
-                                    databaseReference.child("users").child(userTxt).child("password").setValue(passwordTxt);
-                                    databaseReference.child("users").child(userTxt).child("phone").setValue(phoneTxt);
-
-                                    Toast.makeText(SignUp.this, "user registered", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                }
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
-                    }
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userTxt = user.getText().toString();
+                String emailTxt = email.getText().toString();
+                String phoneTxt = phone.getText().toString();
+                String passwordTxt = password.getText().toString();
+                    
+                if(userTxt.equals("") | passwordTxt.equals("") | phoneTxt.equals("") | emailTxt.equals("")){
+                    Toast.makeText(SignUp.this, "Please completely enter your information", Toast.LENGTH_SHORT).show();
                 }
-            });
-            signup.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finish();
+                else{
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReference.child(userTxt).child("Username").setValue(userTxt).toString();
+                            databaseReference.child(userTxt).child("Email").setValue(emailTxt).toString();
+                            databaseReference.child(userTxt).child("Phone").setValue(phoneTxt).toString();
+                            databaseReference.child(userTxt).child("Password").setValue(passwordTxt).toString();
+                            Toast.makeText(SignUp.this, "Regristration Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignUp.this, Login.class));
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
-            });
+                    
+                    
+            }
+
+        });
+
 
     }
 }

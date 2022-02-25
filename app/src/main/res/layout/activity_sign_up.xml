@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +10,10 @@
     <ImageView
         android:layout_width="110dp"
         android:layout_height="130dp"
-        android:background="@drawable/logo"/>
+        android:background="@drawable/logo"
+        android:layout_marginStart="30dp"
+
+        />
 
 
     <TextView
@@ -18,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:gravity="center"
-        android:paddingLeft="60dp"
-        android:text="Fire Groceries"
+        android:paddingLeft="75dp"
+        android:text="Registration"
         android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="bold" />
@@ -36,7 +39,7 @@
         android:drawableLeft="@drawable/ic_baseline_people_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
-        android:text="username"
+        android:hint="username"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
         android:background="#10F0F0F0"
@@ -55,7 +58,7 @@
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
-        android:text="email"
+        android:hint="email"
         android:textSize="25dp"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
@@ -73,7 +76,7 @@
         android:drawableLeft="@drawable/ic_baseline_phone_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
-        android:text="phone number"
+        android:hint="phone number"
         android:textSize="25dp"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
@@ -92,37 +95,18 @@
         android:drawableLeft="@drawable/ic_baseline_key_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
-        android:text="password"
+        android:hint="password"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
         android:textSize="25dp" />
 
-    <EditText
-        android:id="@+id/confirm_pass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#10F0F0F0"
-        android:drawableLeft="@drawable/ic_baseline_key_24"
-        android:drawablePadding="5dp"
-        android:padding="10dp"
-        android:text="conform password"
-        android:textSize="25dp"
-        android:textColor="@color/white"
-        android:textColorHint="#F0F0F0"
-        />
 
     <CheckBox
         android:id="@id/checkbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/confirm_pass"
+        android:layout_below="@id/password"
         android:layout_marginStart="10dp"
-
         android:text="I agree to Terms and Condition "
         android:textColor="@color/white"
         android:textSize="15dp"
