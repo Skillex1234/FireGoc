@@ -6,4 +6,6 @@
     <string name="sign_in_button_text">Sign In</string>
     <string name="dont_have_acct">Don\'t have an account?</string>
     <string name="register_here">Register Here</string>
+    <string name="searchBar">Search</string>
+    <string name="featured">Featured</string>
 </resources>
