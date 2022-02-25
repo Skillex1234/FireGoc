@@ -9,20 +9,21 @@
 
     <EditText
         android:id="@+id/editTextSearch"
-        android:layout_width="413dp"
-        android:layout_height="58dp"
+        android:layout_width="345dp"
+        android:layout_height="51dp"
         android:ems="10"
+        android:hint="@string/searchBar"
         android:inputType="textPersonName"
-        android:text="@string/searchBar"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAccount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollViewFeatured"
-        android:layout_width="412dp"
-        android:layout_height="172dp"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
         android:layout_marginTop="12dp"
         android:fillViewport="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,60 +37,66 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonFeaturedItemOne"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="#F44336"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/itemOne" />
 
             <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonFeaturedItem2"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="#F44336"
+                android:text="@string/itemTwo" />
 
             <Button
-                android:id="@+id/button10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonFeaturedItem3"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="#F44336"
+                android:text="@string/itemThree" />
 
             <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonFeaturedItem4"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="#F44336"
+                android:text="@string/itemFour" />
 
             <Button
-                android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonFeaturedItem5"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="#F44336"
+                android:text="@string/itemFive" />
 
             <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/buttonFeaturedItem6"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="#F44336"
+                android:text="@string/itemSix" />
 
         </LinearLayout>
     </HorizontalScrollView>
@@ -108,8 +115,12 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
 
     <ScrollView
-        android:layout_width="413dp"
-        android:layout_height="414dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="fill_parent"
+        android:layout_height="390dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="48dp"
+        android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollViewFeatured">
 
@@ -119,82 +130,93 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button11"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonCategoryMeats"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF9800"
+                android:text="@string/meats" />
 
             <Button
-                android:id="@+id/button12"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonCategoryDairy"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF9800"
+                android:text="@string/dairy" />
 
             <Button
-                android:id="@+id/button17"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonCategoryFrozen"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF9800"
+                android:text="@string/frozen" />
 
             <Button
-                android:id="@+id/button13"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonCategoryDrinks"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF9800"
+                android:text="@string/drinks" />
 
             <Button
-                android:id="@+id/button22"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonCategoryProduce"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF9800"
+                android:text="@string/produce" />
 
             <Button
-                android:id="@+id/button14"
-                android:layout_width="match_parent"
+                android:id="@+id/buttonCategoryDry"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF9800"
+                android:text="@string/dry" />
 
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button23"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/buttonAccount"
+        android:layout_width="67dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#000000"
+        android:drawableLeft="@drawable/ic_baseline_account_box_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/categories"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollViewFeatured" />
 </androidx.constraintlayout.widget.ConstraintLayout>

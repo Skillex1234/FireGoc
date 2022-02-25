@@ -8,4 +8,17 @@
     <string name="register_here">Register Here</string>
     <string name="searchBar">Search</string>
     <string name="featured">Featured</string>
+    <string name="itemOne">Item Name</string>
+    <string name="itemTwo">Item Name</string>
+    <string name="itemThree">Item Name</string>
+    <string name="itemFour">Item Name</string>
+    <string name="itemFive">Item Name</string>
+    <string name="itemSix">Item Name</string>
+    <string name="meats">Meats</string>
+    <string name="dairy">Dairy</string>
+    <string name="frozen">Frozen</string>
+    <string name="drinks">Drinks</string>
+    <string name="produce">Produce</string>
+    <string name="dry">Dry Foods/Spices</string>
+    <string name="categories">Categories</string>
 </resources>
