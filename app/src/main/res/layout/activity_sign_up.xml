@@ -7,29 +7,21 @@
     android:background="@drawable/fire"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:layout_width="107dp"
-        android:layout_height="133dp"
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="130dp"
         android:background="@drawable/logo"/>
 
 
     <TextView
         android:id="@+id/register"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="-32dp"
-        android:layout_marginBottom="-181dp"
-        android:text="Fire Grocery"
+        android:layout_height="130dp"
+        android:gravity="center"
+        android:paddingLeft="60dp"
+        android:text="Fire Groceries"
         android:textColor="@color/white"
-        android:textColorHighlight="@drawable/logo"
-        android:textSize="45dp"
+        android:textSize="40dp"
         android:textStyle="bold" />
 
     <EditText
@@ -37,84 +29,85 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="-588dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#2C2C2C"
-
+        android:drawableLeft="@drawable/ic_baseline_people_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
         android:text="username"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
+        android:background="#10F0F0F0"
         android:textSize="25dp" />
 
     <EditText
-    android:id="@+id/email"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/user"
-    android:layout_marginStart="-1dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="10dp"
-    android:background="#2C2C2C"
-
-    android:drawablePadding="5dp"
-    android:padding="10dp"
-    android:text="email"
-    android:textSize="25dp"
-    android:textColor="@color/white"
-    android:textColorHint="#F0F0F0"
-    />
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#10F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:text="email"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="#F0F0F0"
+        />
     <EditText
-    android:id="@+id/phone"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/email"
-    android:layout_marginStart="-1dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="10dp"
-    android:background="#2C2C2C"
-
-    android:drawablePadding="5dp"
-    android:padding="10dp"
-    android:text="phone number"
-    android:textSize="25dp"
-    android:textColor="@color/white"
-    android:textColorHint="#F0F0F0"
-    />
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#10F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:text="phone number"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="#F0F0F0"
+        />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/phone"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#2C2C2C"
-
+        android:background="#10F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_key_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
         android:text="password"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
         android:textSize="25dp" />
+
     <EditText
         android:id="@+id/confirm_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#2C2C2C"
-
+        android:background="#10F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_key_24"
         android:drawablePadding="5dp"
         android:padding="10dp"
         android:text="conform password"
@@ -128,9 +121,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/confirm_pass"
+        android:layout_marginStart="10dp"
+
         android:text="I agree to Terms and Condition "
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="15dp"
         android:textStyle="bold" />
     <Button
         android:layout_width="250dp"
@@ -139,15 +134,12 @@
         android:layout_below="@id/checkbox"
         android:backgroundTint="#9D2932"
         android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textSize="30dp"
         android:layout_centerHorizontal="true"
+
         />
-
-
-
-
 
 </RelativeLayout>

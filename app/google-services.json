@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "162029316678",
+    "firebase_url": "https://fire-groceries-514d0-default-rtdb.firebaseio.com",
     "project_id": "fire-groceries-514d0",
     "storage_bucket": "fire-groceries-514d0.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "162029316678-3u1fqqjhkhof0v278ijrspr04k1epa4u.apps.googleusercontent.com",
+          "client_id": "162029316678-j88r9pv778vbiq5h0pk0idk32i94if4v.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.groupproject",
