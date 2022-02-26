@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MeatsCategory"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/meat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/orange"
+        android:text="Meats"
+        android:textColor="#F0F0F0"
+        android:textSize="40dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search"
+        android:layout_below="@+id/meat"
+        android:hint="Search"
+        android:textColorHint="#F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:background="#90EFB164"
+        android:padding="5dp"
+        android:textColor="#F0F0F0"
+        />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/dino"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/dino_nuggets" />
+
+            <TextView
+                android:id="@+id/dinotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dino"
+                android:text="Dino Nuggets\n        $19"
+                android:textStyle="bold"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/white"
+                />
+
+            <ImageView
+                android:id="@+id/beef"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ground_beef" />
+
+            <ImageView
+                android:id="@+id/turkey"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/dinotext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ground_turkey" />
+
+            <ImageView
+                android:id="@+id/breast"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/turkey"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/chicken_breasts" />
+
+            <ImageView
+                android:id="@+id/steak"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/breast"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="46dp"
+                android:src="@drawable/steak" />
+
+            <ImageView
+                android:id="@+id/prosciutto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/beef"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/sliced_prosciutto"
+                />
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
