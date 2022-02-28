@@ -43,11 +43,11 @@
                 app:srcCompat="@drawable/coke" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewFeaturedOne"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageViewCoke"
-                android:text="TextView"
+                android:text="coke"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
