@@ -23,9 +23,13 @@ public class MeatsCategory extends AppCompatActivity {
         dino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String itemNameWithSpaces = dinoText.getText().toString().substring(0,12);
                 String itemName = dinoText.getText().toString().substring(0,12).replaceAll(" ","");
                 Intent itemPage = new Intent(MeatsCategory.this, ItemPage.class);
-                itemPage.putExtra("item_name", itemName);
+                Bundle extras = new Bundle();
+                extras.putString("item_name", itemName);
+                extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
         });

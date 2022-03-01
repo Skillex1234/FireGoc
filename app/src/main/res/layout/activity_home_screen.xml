@@ -37,7 +37,7 @@
             android:layout_height="fill_parent">
 
             <ImageView
-                android:id="@+id/imageViewCoke"
+                android:id="@+id/imageViewFeatured1"
                 android:layout_width="120dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/coke" />
@@ -46,32 +46,65 @@
                 android:id="@+id/textViewFeaturedOne"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imageViewCoke"
-                android:text="coke"
+                android:layout_below="@id/imageViewFeatured1"
+                android:text="@string/coke"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageViewFeatured2"
                 android:layout_width="120dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="150dp"
-                app:srcCompat="@drawable/coke" />
+                app:srcCompat="@drawable/dino_nuggets" />
+
+            <TextView
+                android:id="@+id/textViewFeaturedTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_below="@+id/imageViewFeatured2"
+                android:layout_marginLeft="150dp"
+                android:text="@string/DinoNuggets"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imageViewFeatured3"
                 android:layout_width="120dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="300dp"
-                app:srcCompat="@drawable/coke" />
+                app:srcCompat="@drawable/iced_tea" />
+
+            <TextView
+                android:id="@+id/textViewFeaturedThree"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageViewFeatured3"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="-14dp"
+                android:text="@string/Arizona"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imageViewFeatured4"
                 android:layout_width="120dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="450dp"
-                app:srcCompat="@drawable/coke" />
+                app:srcCompat="@drawable/ketchup" />
+
+            <TextView
+                android:id="@+id/textViewFeaturedFour"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewFeatured4"
+                android:layout_marginLeft="450dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/ketchup"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
         </RelativeLayout>
     </HorizontalScrollView>

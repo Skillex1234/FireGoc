@@ -22,4 +22,9 @@
     <string name="dry">Dry Foods/Spices</string>
     <string name="categories">Categories</string>
     <string name="payment_method">Payment</string>
+    <string name="coke">coke</string>
+    <string name="DinoNuggets">Dino Nuggets</string>
+    <string name="Arizona">Arizona Iced Tea</string>
+    <string name="ketchup">Ketchup</string>
+    <string name="placeholder">Loading...</string>
 </resources>
