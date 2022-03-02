@@ -18,17 +18,16 @@
         android:textSize="40dp" />
 
     <EditText
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/search"
         android:layout_below="@+id/meat"
-        android:hint="Search"
-        android:textColorHint="#F0F0F0"
-        android:drawableLeft="@drawable/ic_baseline_search_24"
         android:background="#90EFB164"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
         android:padding="5dp"
         android:textColor="#F0F0F0"
-        />
+        android:textColorHint="#F0F0F0" />
 
     <ScrollView
         android:id="@+id/scroll"
@@ -41,6 +40,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="20dp"
             >
 
             <ImageView
@@ -49,15 +49,17 @@
                 android:layout_height="150dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/dino_nuggets" />
+                android:src="@drawable/dino_nuggets"
+                />
 
             <TextView
                 android:id="@+id/dinotext"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dino"
-                android:layout_marginLeft="60dp"
-                android:text="Dino Nuggets\n        $19"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Dino Nuggets\n$12.99"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -70,6 +72,18 @@
                 android:layout_marginRight="30dp"
                 android:src="@drawable/ground_beef" />
 
+            <TextView
+                android:id="@+id/beeftext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beef"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Ground Beef\n$14.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/turkey"
                 android:layout_width="150dp"
@@ -79,34 +93,127 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/ground_turkey" />
 
+            <TextView
+                android:id="@+id/turkeytext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/turkey"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Ground Turkey\n$11.95"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/breast"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_below="@id/turkey"
+                android:layout_below="@id/turkeytext"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/chicken_breasts" />
+
+            <TextView
+                android:id="@+id/breasttext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/breast"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Chicken Breasts\n$13.95"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/steak"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_below="@id/breast"
+                android:layout_below="@id/breasttext"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="46dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/steak" />
+
+            <TextView
+                android:id="@+id/steaktext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/steak"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Rib Eye Steak\n$17.95"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
 
             <ImageView
                 android:id="@+id/prosciutto"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_below="@id/beef"
+                android:layout_below="@id/beeftext"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:src="@drawable/sliced_prosciutto"
                 />
+
+            <TextView
+                android:id="@+id/prosciuttotext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/prosciutto"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Sliced Prosciutto\n$15.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/thighs"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/prosciuttotext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/chicken_thighs"
+                />
+
+            <TextView
+                android:id="@+id/thighstext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thighs"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Chicken Thighs\n$13.95"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Wholechicken"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/thighstext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/whole_chicken"
+                />
+
+            <TextView
+                android:id="@+id/wholechickentext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Wholechicken"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Whole Chicken\n$19.95"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
 
 
         </RelativeLayout>
