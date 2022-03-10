@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject">
         <activity
+            android:name=".Checkout"
+            android:exported="false" />
+        <activity
             android:name=".ItemPage"
             android:exported="false" />
         <activity
