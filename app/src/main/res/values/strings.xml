@@ -27,4 +27,6 @@
     <string name="Arizona">Arizona Iced Tea</string>
     <string name="ketchup">Ketchup</string>
     <string name="placeholder">Loading...</string>
+    <string name="checkout">Checkout</string>
+    <string name="tax">Tax</string>
 </resources>
