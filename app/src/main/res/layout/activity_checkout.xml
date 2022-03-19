@@ -8,37 +8,37 @@
     tools:context=".Checkout">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="261dp"
-        android:layout_marginTop="266dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/checkout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemPage" />
+        app:layout_constraintEnd_toStartOf="@+id/chosepayment"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="215dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="496dp"
+        android:layout_marginBottom="101dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="Subtotal"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="521dp" />
+        app:layout_constraintBottom_toTopOf="@+id/checkout"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="221dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="174dp"
+        android:layout_marginEnd="27dp"
         android:layout_marginBottom="90dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -46,19 +46,24 @@
         android:text="@string/tax"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chosepayment"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="294dp"
+        android:layout_marginBottom="183dp"
         android:background="#FF9800"
         android:text="Your cart is currently empty"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="294dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/itemPage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/itemPage"
@@ -76,5 +81,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/chosepayment"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="104dp"
+        android:text="Payment Method"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
