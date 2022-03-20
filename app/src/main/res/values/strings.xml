@@ -29,4 +29,10 @@
     <string name="placeholder">Loading...</string>
     <string name="checkout">Checkout</string>
     <string name="tax">Tax</string>
+    <string name="desc">Description</string>
+    <string name="recipes">Recipes</string>
+    <string name="nutrition">Nutrition Facts</string>
+    <string name="reviews">Reviews</string>
+    <string name="addToCart">Add To Cart</string>
+    <string name="quantity">Quantity</string>
 </resources>

@@ -29,22 +29,109 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_toEndOf="@+id/imageViewItem"
             android:text="@string/placeholder"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewItemDescription"
-            android:layout_width="380dp"
-            android:layout_height="140dp"
-            android:layout_below="@+id/imageViewItem"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/tabTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonAddToCart"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="20dp"
+            android:background="#000000"
+            app:tabIndicatorColor="#FF5722"
+            app:tabTextColor="#FFFFFF">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desc"
+                android:textSize="12sp" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabNutrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nutrition" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabRecipes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recipes" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabReviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reviews" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayoutTabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp">
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewItemName"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/imageViewItem"
             android:text="@string/placeholder"
             android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewPrice"
+            android:layout_alignStart="@+id/textViewPrice"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="#FF5722"
+            android:text="@string/addToCart" />
+
+        <Spinner
+            android:id="@+id/spinnerQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewPrice"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="40dp"
+            android:layout_toStartOf="@+id/buttonAddToCart"
+            android:backgroundTint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/textViewQuant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewPrice"
+            android:layout_alignStart="@+id/imageViewItem"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/quantity"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
