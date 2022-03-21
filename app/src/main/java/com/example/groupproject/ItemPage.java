@@ -105,7 +105,8 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         itemName.setText(itemPage.getString("item_name_with_spaces"));
 
         //Set text for price
-        //price.setText(dbRef.child("Items").child(itemLoc).child("price").toString());
+        String priceText = "$ " + dbRef.child("Items").child(itemLoc).child("price").toString();
+        price.setText(priceText);
 
         //Get image from firebase
         DatabaseReference getImage = dbRef.child("Items").child(itemLoc).child("image");

@@ -119,8 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/breast"
                 android:layout_marginLeft="30dp"
+                android:text="Chicken Breast\n$13.95"
                 android:textAlignment="center"
-                android:text="Chicken Breasts\n$13.95"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -186,8 +186,8 @@
                 android:layout_below="@id/thighs"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30dp"
+                android:text="Chicken Thigh\n$13.95"
                 android:textAlignment="center"
-                android:text="Chicken Thighs\n$13.95"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
