@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,7 +40,8 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
     Spinner itemQuantity;
     Button addToCart;
 
-    int itemAmount = 0;
+    String itemAmount;
+    int numItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,9 +132,12 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View view) {
                 Intent cartPage = new Intent(ItemPage.this, Checkout.class);
-                if(itemAmount > 0){
-                    cartPage.putExtra("Amount", itemAmount);
+                Bundle cartBundle = new Bundle();
+                if(numItems > 0){
+                    cartBundle.putString("Amount", itemAmount);
                 }
+                cartBundle.putString("itemName", itemName.getText().toString());
+                cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
             }
         });
@@ -141,8 +146,9 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
 
     //store the value selected in a variable
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-        String strAmt = parent.getItemAtPosition(position).toString();
-        itemAmount = Integer.valueOf(strAmt);
+        ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
+        itemAmount = parent.getItemAtPosition(position).toString();
+        numItems = Integer.valueOf(itemAmount);
     }
 
     public void onNothingSelected(AdapterView<?> parent){

@@ -26,7 +26,7 @@ public class Checkout extends AppCompatActivity {
         itemPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Checkout.this, ItemPage.class));
+                startActivity(new Intent(Checkout.this, HomeScreen.class));
             }
         });
         checkout = findViewById(R.id.checkout);
