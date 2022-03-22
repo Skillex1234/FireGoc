@@ -64,10 +64,14 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         //Get info from bundle
         Bundle itemPage = getIntent().getExtras();
         String itemLoc = itemPage.getString("item_name");
-        Bundle descriptionBundle = new Bundle();
-        descriptionBundle.putString("itemLocation", itemLoc);
+        Bundle locationBundle = new Bundle();
+        locationBundle.putString("itemLocation", itemLoc);
         Description desc = new Description();
-        desc.setArguments(descriptionBundle);
+        desc.setArguments(locationBundle);
+        NutritionFacts nf = new NutritionFacts();
+        nf.setArguments(locationBundle);
+        Recipes rp = new Recipes();
+        Reviews rv = new Reviews();
 
         //Make the description tab content appear when the page is loaded
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, desc).commit();
@@ -80,6 +84,15 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
                 switch(tabName){
                     case "Description" :
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, desc).commit();
+                        break;
+                    case "Nutrition Facts" :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, nf).commit();
+                        break;
+                    case "Recipes" :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, rp).commit();
+                        break;
+                    case "Reviews" :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, rv).commit();
                         break;
                     default :
                         getSupportFragmentManager().beginTransaction().remove(desc).commit();
@@ -105,8 +118,20 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         itemName.setText(itemPage.getString("item_name_with_spaces"));
 
         //Set text for price
-        String priceText = "$ " + dbRef.child("Items").child(itemLoc).child("price").toString();
-        price.setText(priceText);
+        DatabaseReference getPrice = dbRef.child("Items").child(itemLoc).child("price");
+        getPrice.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.isSuccessful()){
+                    DataSnapshot snapshot = task.getResult();
+                    String text = snapshot.getValue(Double.class).toString();
+                    price.setText("$ " + text);
+                }
+                else{
+                    Toast.makeText(ItemPage.this, "Error Retrieving Price", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         //Get image from firebase
         DatabaseReference getImage = dbRef.child("Items").child(itemLoc).child("image");
