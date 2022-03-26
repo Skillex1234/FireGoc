@@ -13,6 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomeScreen extends AppCompatActivity {
 
     Button meatcategory;
+    Button frozencategory;
+    Button dairycategory;
+    Button spicecategory;
+    Button beveragecategory;
+    Button producecategory;
+
     ImageView featured1;
     ImageView featured2;
     ImageView featured3;
@@ -29,6 +35,11 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         meatcategory = findViewById(R.id.buttonCategoryMeats);
+        frozencategory = findViewById(R.id.buttonCategoryFrozen);
+        dairycategory = findViewById(R.id.buttonCategoryDairy);
+        spicecategory = findViewById(R.id.buttonCategoryDry);
+        beveragecategory = findViewById(R.id.buttonCategoryDrinks);
+        producecategory = findViewById(R.id.buttonCategoryProduce);
         featured1 = findViewById(R.id.imageViewFeatured1);
         featured2 = findViewById(R.id.imageViewFeatured2);
         featured3 = findViewById(R.id.imageViewFeatured3);
@@ -40,6 +51,38 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(new Intent(HomeScreen.this, MeatsCategory.class));
             }
         });
+
+        producecategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, ProduceCategory.class));
+            }
+        });
+        dairycategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, DairyCategory.class));
+            }
+        });
+        spicecategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, SpicesAndDryFoodCategory.class));
+            }
+        });
+        beveragecategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, BeveragesCategory.class));
+            }
+        });
+        frozencategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, FrozenCategory.class));
+            }
+        });
+
 
         textViewFeaturedOne = findViewById(R.id.textViewFeaturedOne);
         featured1.setOnClickListener(new View.OnClickListener() {
