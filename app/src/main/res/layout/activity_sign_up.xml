@@ -36,20 +36,20 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        android:background="#10F0F0F0"
         android:drawableLeft="@drawable/ic_baseline_people_24"
         android:drawablePadding="5dp"
-        android:padding="10dp"
         android:hint="Username"
+        android:padding="10dp"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
-        android:background="#10F0F0F0"
         android:textSize="25dp" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/user"
+        android:layout_below="@id/lastname"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -59,6 +59,44 @@
         android:drawablePadding="5dp"
         android:padding="10dp"
         android:hint="Email"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="#F0F0F0"
+        />
+
+    <EditText
+        android:id="@+id/firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#10F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_border_color_24"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:hint="First Name"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:textColorHint="#F0F0F0"
+        />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstname"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#10F0F0F0"
+        android:drawableLeft="@drawable/ic_baseline_border_color_24"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:hint="Last Name"
         android:textSize="25dp"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0"
@@ -101,22 +139,11 @@
         android:textColorHint="#F0F0F0"
         android:textSize="25dp" />
 
-
-    <CheckBox
-        android:id="@id/checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-        android:layout_marginStart="10dp"
-        android:text="I agree to Terms and Condition "
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textStyle="bold" />
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/signup"
-        android:layout_below="@id/checkbox"
+        android:layout_below="@id/password"
         android:backgroundTint="#9D2932"
         android:padding="10dp"
         android:layout_marginTop="10dp"

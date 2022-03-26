@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProduceCategory"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/Produce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#59c639"
+        android:text="Produce"
+        android:textColor="#F0F0F0"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Produce"
+        android:background="#9059c639"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
+        android:padding="5dp"
+        android:textColor="#F0F0F0"
+        android:textColorHint="#F0F0F0" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/apple"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/apples"
+                />
+
+            <TextView
+                android:id="@+id/appletext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/apple"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Apples\n$0.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/asparagus"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/asparagus" />
+
+            <TextView
+                android:id="@+id/asparagustext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/asparagus"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Asparagus\n$3.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/avovo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/asparagustext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/avovo" />
+
+            <TextView
+                android:id="@+id/Avocadotext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/avovo"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Avocados\n$1.79"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Banana"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/Avocadotext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/banana" />
+
+            <TextView
+                android:id="@+id/bananatext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Banana"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Bananas\n$0.49"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Cucumber"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/bananatext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/cucumbers" />
+
+            <TextView
+                android:id="@+id/cucumbertext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Cucumber"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Cucumbers\n$0.89"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
+
+            <ImageView
+                android:id="@+id/Dragon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/asparagustext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/dragon"
+                />
+
+            <TextView
+                android:id="@+id/Dragontext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Dragon"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Dragon Fruit\n$5.38"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/onions"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/Dragontext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/onions"
+                />
+
+            <TextView
+                android:id="@+id/oniontext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/onions"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Onions\n$2.49"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Oranges"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/oniontext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/oranges"
+                />
+
+            <TextView
+                android:id="@+id/orangetext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Oranges"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Oranges\n$1.99"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

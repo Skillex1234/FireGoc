@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DairyCategory"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/Dairy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFDD0"
+        android:text="Dairy"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Dairy"
+        android:background="#99FFFDD0"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
+        android:padding="5dp"
+        android:textColor="#F0F0F0"
+        android:textColorHint="#F0F0F0" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/buttermilk"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/buttermilk"
+                />
+
+            <TextView
+                android:id="@+id/buttermilktext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttermilk"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Buttermilk\n$3.49"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Cream"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/cream" />
+
+            <TextView
+                android:id="@+id/creamtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Cream"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Heavy Cream\n$3.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Mozza"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/creamtext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/mozzarella" />
+
+            <TextView
+                android:id="@+id/mozzatext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Mozza"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Mozzarella Cheese\n$8.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Parm"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/mozzatext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/parm" />
+
+            <TextView
+                android:id="@+id/parmtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Parm"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Parmesan Cheese\n$3.29"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Shredded"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/parmtext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/shredded" />
+
+            <TextView
+                android:id="@+id/cucumbertext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Shredded"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Shredded Cheese\n$5.99"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
+
+            <ImageView
+                android:id="@+id/Sour"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/creamtext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/sour"
+                />
+
+            <TextView
+                android:id="@+id/sourtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Sour"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Sour Cream\n$3.79"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Whole"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/sourtext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/whole" />
+
+            <TextView
+                android:id="@+id/wholemilktext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Whole"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Whole Milk\n$4.89"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Yogurt"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/wholemilktext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/yogurt"
+                />
+
+            <TextView
+                android:id="@+id/yogurttext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Yogurt"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Yogurt\n$5.89"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignUp extends AppCompatActivity {
     
-    EditText user, email, phone, password;
+    EditText user, email, phone, password, firstname, lastname;
     Button signup;
     DatabaseReference databaseReference;
 
@@ -30,6 +30,8 @@ public class SignUp extends AppCompatActivity {
         email = findViewById(R.id.email);
         phone = findViewById(R.id.phone);
         password = findViewById(R.id.password);
+        firstname = findViewById(R.id.firstname);
+        lastname = findViewById(R.id.lastname);
         signup = findViewById(R.id.signup);
 
 
@@ -40,10 +42,13 @@ public class SignUp extends AppCompatActivity {
                 String emailTxt = email.getText().toString();
                 String phoneTxt = phone.getText().toString();
                 String passwordTxt = password.getText().toString();
+                String firstnameTxt = firstname.getText().toString();
+                String lastnameTxt = lastname.getText().toString();
                     
-                if(userTxt.equals("") | passwordTxt.equals("") | phoneTxt.equals("") | emailTxt.equals("")){
+                if(userTxt.equals("") | passwordTxt.equals("") | phoneTxt.equals("") | emailTxt.equals("") | lastnameTxt.equals("")){
                     Toast.makeText(SignUp.this, "Please completely enter your information", Toast.LENGTH_SHORT).show();
                 }
+
                 else{
 
                     databaseReference = FirebaseDatabase.getInstance().getReference("Users");
@@ -51,6 +56,8 @@ public class SignUp extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReference.child(userTxt).child("Username").setValue(userTxt).toString();
+                            databaseReference.child(userTxt).child("First Name").setValue(firstnameTxt).toString();
+                            databaseReference.child(userTxt).child("Last Name").setValue(lastnameTxt).toString();
                             databaseReference.child(userTxt).child("Email").setValue(emailTxt).toString();
                             databaseReference.child(userTxt).child("Phone").setValue(phoneTxt).toString();
                             databaseReference.child(userTxt).child("Password").setValue(passwordTxt).toString();

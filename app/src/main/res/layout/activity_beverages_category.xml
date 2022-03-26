@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeveragesCategory"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/Beverages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#00ffff"
+        android:text="Beverages"
+        android:textColor="#F0F0F0"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Beverages"
+        android:background="#9000ffff"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
+        android:padding="5dp"
+        android:textColor="#F0F0F0"
+        android:textColorHint="#F0F0F0" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/coke"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/coke"
+                />
+
+            <TextView
+                android:id="@+id/coketext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coke"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Coke\n$1.96"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/green"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/green" />
+
+            <TextView
+                android:id="@+id/greentext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/green"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Green Tea\n$2.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iced"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/greentext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/iced_tea" />
+
+            <TextView
+                android:id="@+id/icedtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iced"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Iced Tea\n$2.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/apple_juice"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/icedtext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/juice" />
+
+            <TextView
+                android:id="@+id/apple_juice_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/apple_juice"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Apple Juice\n$4.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/orange_juice"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/apple_juice_text"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/orange_juice" />
+
+            <TextView
+                android:id="@+id/orange_juice_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/orange_juice"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Orange Juice\n$4.19"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
+
+            <ImageView
+                android:id="@+id/poland"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/greentext"
+                android:background="#ffffff"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/poland"
+                />
+
+            <TextView
+                android:id="@+id/polandtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/poland"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Poland Springs Water\n$4.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/sparkling"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/polandtext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/spark"
+                />
+
+            <TextView
+                android:id="@+id/sparktext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sparkling"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Sparkling Water\n$16.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

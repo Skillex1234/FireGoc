@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProduceCategory"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/Spices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#6e3226"
+        android:text="Spices N Dry food"
+        android:textColor="#F0F0F0"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Spices"
+        android:background="#906e3226"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
+        android:padding="5dp"
+        android:textColor="#F0F0F0"
+        android:textColorHint="#F0F0F0" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/canyenne"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/canyenne"
+                />
+
+            <TextView
+                android:id="@+id/cayennetext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/canyenne"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Canyenne\n$2.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/chili"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/chili" />
+
+            <TextView
+                android:id="@+id/chilitext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chili"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Chili Powder\n$6.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cinnamon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/chilitext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/cinnamon" />
+
+            <TextView
+                android:id="@+id/cinnamontext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cinnamon"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Avocados\n$3.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/garlic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/cinnamontext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/garlic" />
+
+            <TextView
+                android:id="@+id/garlictext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/garlic"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Garlic Powder\n$3.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/oregano"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/garlictext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/oregano" />
+
+            <TextView
+                android:id="@+id/oreganotext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/oregano"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Oregano\n$3.99"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
+
+            <ImageView
+                android:id="@+id/red"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/chilitext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/red"
+                />
+
+            <TextView
+                android:id="@+id/redtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/red"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Red Pepper\n$2.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/smoked"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/redtext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/smoked"
+                />
+
+            <TextView
+                android:id="@+id/smokedtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/smoked"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Smoked Paprika\n$2.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Turmeric"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/smokedtext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/turmeric"
+                />
+
+            <TextView
+                android:id="@+id/turmerictext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Turmeric"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Turmeric\n$2.99"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FrozenCategory"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/Frozen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#6495ed"
+        android:text="Frozen"
+        android:textColor="#F0F0F0"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Frozen"
+        android:background="#906495ed"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
+        android:padding="5dp"
+        android:textColor="#F0F0F0"
+        android:textColorHint="#F0F0F0" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/search"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/cookies"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/cookies"
+                />
+
+            <TextView
+                android:id="@+id/cookiestext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cookies"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Cookies and Cream\n$1.97"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/pizza"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/pizza" />
+
+            <TextView
+                android:id="@+id/pizzatext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pizza"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Pizza\n$8.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/salmon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/pizzatext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/salmon" />
+
+            <TextView
+                android:id="@+id/salmontext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/salmon"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Frozen Salmon\n$21.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/shrimp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/salmontext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/shrimp" />
+
+            <TextView
+                android:id="@+id/shrimptext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shrimp"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Frozen Shrimp\n$14.99"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Steamed"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/shrimptext"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/steam" />
+
+            <TextView
+                android:id="@+id/steamtext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Steamed"
+                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
+                android:text="Steamed Vegetables\n$2.49"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingBottom="50dp"/>
+
+            <ImageView
+                android:id="@+id/tots"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/pizzatext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/tots"
+                />
+
+            <TextView
+                android:id="@+id/totstext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tots"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Tater Tots\n$1.68"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/Wedges"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/totstext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/wedges"
+                />
+
+            <TextView
+                android:id="@+id/wedgestext"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Wedges"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:text="Potato Wedges\n$1.68"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

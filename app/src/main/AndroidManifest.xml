@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject">
         <activity
+            android:name=".SpicesAndDryFoodCategory"
+            android:exported="false" />
+        <activity
+            android:name=".BeveragesCategory"
+            android:exported="false" />
+        <activity
+            android:name=".FrozenCategory"
+            android:exported="false" />
+        <activity
+            android:name=".DairyCategory"
+            android:exported="false" />
+        <activity
+            android:name=".ProduceCategory"
+            android:exported="false" />
+        <activity
+            android:name=".Forgotpassword"
+            android:exported="false" />
+        <activity
             android:name=".ItemPage"
             android:exported="false" />
         <activity
