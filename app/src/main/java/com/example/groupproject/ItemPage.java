@@ -134,7 +134,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         });
 
         //Get image from firebase
-        DatabaseReference getImage = dbRef.child("Items").child(itemLoc).child("image");
+        DatabaseReference getImage = dbRef.child("Items").child(itemLoc).child("Image");
         getImage.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

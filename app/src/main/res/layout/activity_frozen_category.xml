@@ -49,8 +49,7 @@
                 android:layout_height="150dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/cookies"
-                />
+                android:src="@drawable/cookies" />
 
             <TextView
                 android:id="@+id/cookiestext"
@@ -139,11 +138,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Steamed"
                 android:layout_marginLeft="30dp"
-                android:textAlignment="center"
+                android:paddingBottom="50dp"
                 android:text="Steamed Vegetables\n$2.49"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:paddingBottom="50dp"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/tots"

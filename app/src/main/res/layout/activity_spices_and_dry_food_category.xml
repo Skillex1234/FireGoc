@@ -44,22 +44,21 @@
             >
 
             <ImageView
-                android:id="@+id/canyenne"
+                android:id="@+id/cayenne"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/canyenne"
-                />
+                android:src="@drawable/canyenne" />
 
             <TextView
                 android:id="@+id/cayennetext"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/canyenne"
+                android:layout_below="@id/cayenne"
                 android:layout_marginLeft="30dp"
+                android:text="Cayenne\n$2.99"
                 android:textAlignment="center"
-                android:text="Canyenne\n$2.99"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -79,8 +78,8 @@
                 android:layout_below="@id/chili"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30dp"
-                android:textAlignment="center"
                 android:text="Chili Powder\n$6.99"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -99,8 +98,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cinnamon"
                 android:layout_marginLeft="30dp"
+                android:text="Cinnamon\n$3.99"
                 android:textAlignment="center"
-                android:text="Avocados\n$3.99"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -119,8 +118,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/garlic"
                 android:layout_marginLeft="30dp"
-                android:textAlignment="center"
                 android:text="Garlic Powder\n$3.99"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -153,8 +152,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:src="@drawable/red"
-                />
+                android:src="@drawable/red" />
 
             <TextView
                 android:id="@+id/redtext"
@@ -163,8 +161,8 @@
                 android:layout_below="@id/red"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30dp"
-                android:textAlignment="center"
                 android:text="Red Pepper\n$2.99"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
