@@ -20,7 +20,7 @@ public class Login extends AppCompatActivity {
 
     Button signin;
     EditText user, pass;
-    TextView register;
+    TextView register, forgot;
     DatabaseReference databaseReference;
 
     @Override
@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
         pass = findViewById(R.id.pass);
         signin = findViewById(R.id.signin);
         register = findViewById(R.id.register);
+        forgot = findViewById(R.id.forgot);
 
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +81,13 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(Login.this, SignUp.class));
 
+            }
+        });
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, Forgotpassword.class));
             }
         });
     }

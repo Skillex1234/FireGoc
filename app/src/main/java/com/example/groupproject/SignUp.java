@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignUp extends AppCompatActivity {
     
-    EditText user, email, phone, password, firstname, lastname;
+    EditText user, email, phone, password, firstname, lastname, security;
     Button signup;
     DatabaseReference databaseReference;
 
@@ -33,6 +33,7 @@ public class SignUp extends AppCompatActivity {
         firstname = findViewById(R.id.firstname);
         lastname = findViewById(R.id.lastname);
         signup = findViewById(R.id.signup);
+        security = findViewById(R.id.answer);
 
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +45,9 @@ public class SignUp extends AppCompatActivity {
                 String passwordTxt = password.getText().toString();
                 String firstnameTxt = firstname.getText().toString();
                 String lastnameTxt = lastname.getText().toString();
+                String questionTxt = security.getText().toString();
                     
-                if(userTxt.equals("") | passwordTxt.equals("") | phoneTxt.equals("") | emailTxt.equals("") | lastnameTxt.equals("")){
+                if(userTxt.equals("") | passwordTxt.equals("") | phoneTxt.equals("") | emailTxt.equals("") | lastnameTxt.equals("") | questionTxt.equals("")){
                     Toast.makeText(SignUp.this, "Please completely enter your information", Toast.LENGTH_SHORT).show();
                 }
 
@@ -61,6 +63,8 @@ public class SignUp extends AppCompatActivity {
                             databaseReference.child(userTxt).child("Email").setValue(emailTxt).toString();
                             databaseReference.child(userTxt).child("Phone").setValue(phoneTxt).toString();
                             databaseReference.child(userTxt).child("Password").setValue(passwordTxt).toString();
+                            databaseReference.child(userTxt).child("Security Question").setValue(questionTxt).toString();
+
                             Toast.makeText(SignUp.this, "Regristration Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SignUp.this, Login.class));
                         }

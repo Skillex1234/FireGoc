@@ -9,9 +9,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GroupProject"
-        android:screenOrientation="sensorPortrait">
+        android:theme="@style/Theme.GroupProject">
+        <activity
+            android:name=".PasswordReset"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordPage2"
+            android:exported="false" />
+        <activity
+            android:name=".Forgotpassword"
+            android:exported="false" />
         <activity
             android:name=".ItemPage"
             android:exported="false" />
@@ -51,8 +60,9 @@
         <activity
             android:name=".SignUp"
             android:exported="false" />
-        <activity android:name=".Checkout"
-            android:exported="false"/>
+        <activity
+            android:name=".Checkout"
+            android:exported="false" />
     </application>
 
 </manifest>
