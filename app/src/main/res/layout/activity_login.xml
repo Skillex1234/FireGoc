@@ -26,8 +26,10 @@
         android:drawableLeft="@drawable/usericon"
         android:drawablePadding="5dp"
         android:hint="@string/username_hint"
+        android:imeOptions="actionDone"
         android:inputType="text"
         android:padding="15dp"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:textColorHint="#F0F0F0" />
 
@@ -47,7 +49,10 @@
         android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="@color/white"
-        android:textColorHint="#F0F0F0" />
+        android:textColorHint="#F0F0F0"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        />
 
     <TextView
 
@@ -60,6 +65,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:text="@string/forgot_password"
+        android:imeOptions="actionDone"
         android:textColor="#F0F0F0"
         android:textSize="15dp" />
 
