@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -28,6 +31,11 @@ public class HomeScreen extends AppCompatActivity {
     TextView textViewFeaturedThree;
     TextView textViewFeaturedFour;
 
+    public static CartItem ourList = new CartItem();
+    private ArrayList<String> itemNameList = new ArrayList<String>();
+    private ArrayList<String> itemQuantityList = new ArrayList<String>();
+    private ArrayList<String> itemPriceList = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,41 +53,59 @@ public class HomeScreen extends AppCompatActivity {
         featured3 = findViewById(R.id.imageViewFeatured3);
         featured4 = findViewById(R.id.imageViewFeatured4);
 
+        Bundle listBundle = new Bundle();
+        listBundle.putStringArrayList("nameList", itemNameList);
+        listBundle.putStringArrayList("quantityList", itemQuantityList);
+        listBundle.putStringArrayList("priceList", itemPriceList);
+
         meatcategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this, MeatsCategory.class));
+                //These two lines for each category
+                Intent i = new Intent(HomeScreen.this, MeatsCategory.class);
+                i.putExtras(listBundle);
+                startActivity(i);
             }
         });
 
         producecategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this, ProduceCategory.class));
+                Intent i = new Intent(HomeScreen.this, ProduceCategory.class);
+                i.putExtras(listBundle);
+                startActivity(i);
             }
         });
         dairycategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this, DairyCategory.class));
+                Intent i = new Intent(HomeScreen.this, DairyCategory.class);
+                i.putExtras(listBundle);
+                startActivity(i);
             }
         });
         spicecategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this, SpicesAndDryFoodCategory.class));
+                Intent i = new Intent(HomeScreen.this, SpicesAndDryFoodCategory.class);
+                i.putExtras(listBundle);
+                startActivity(i);
             }
         });
         beveragecategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this, BeveragesCategory.class));
+                Intent i = new Intent(HomeScreen.this, BeveragesCategory.class);
+                i.putExtras(listBundle);
+                startActivity(i);
             }
         });
         frozencategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this, FrozenCategory.class));
+                Intent i = new Intent(HomeScreen.this, FrozenCategory.class);
+                i.putExtras(listBundle);
+                startActivity(i);
             }
         });
 
@@ -94,6 +120,9 @@ public class HomeScreen extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -109,6 +138,9 @@ public class HomeScreen extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -124,6 +156,9 @@ public class HomeScreen extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -139,6 +174,9 @@ public class HomeScreen extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }

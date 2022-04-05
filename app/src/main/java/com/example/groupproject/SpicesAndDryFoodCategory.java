@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class SpicesAndDryFoodCategory extends AppCompatActivity {
 
     ImageView cayenne;
@@ -19,10 +21,17 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
     ImageView oregano;
     ImageView turmeric;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spices_and_dry_food_category);
+
+        Bundle itemPage = getIntent().getExtras();
+        ArrayList<String> itemNameList = itemPage.getStringArrayList("nameList");
+        ArrayList<String> itemQuantityList = itemPage.getStringArrayList("qList");
+        ArrayList<String> itemPriceList = itemPage.getStringArrayList("pList");
 
         cayenne = findViewById(R.id.cayenne);
         cayenne.setOnClickListener(new View.OnClickListener(){
@@ -34,6 +43,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -49,6 +61,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -64,6 +79,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -79,6 +97,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -94,6 +115,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -109,6 +133,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -124,6 +151,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -139,6 +169,9 @@ public class SpicesAndDryFoodCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
