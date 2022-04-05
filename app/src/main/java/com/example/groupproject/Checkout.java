@@ -98,9 +98,9 @@ public class Checkout extends AppCompatActivity {
         String taxString = String.format("%.2f", tax);
         Double total = subTotal + tax;
         String totalString = String.format("%.2f", total);
-        textViewSubtotal.setText(subTotalString);
-        textViewTax.setText(taxString);
-        textViewTotal.setText(totalString);
+        textViewSubtotal.setText("$ " + subTotalString);
+        textViewTax.setText("$ " + taxString);
+        textViewTotal.setText("$ " + totalString);
 
         //Checkout button
         checkout = findViewById(R.id.checkout);
@@ -114,7 +114,11 @@ public class Checkout extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
-                                finish();
+                                adapter.clearCart();
+                                adapter.notifyDataSetChanged();
+                                textViewSubtotal.setText("$ 0.00");
+                                textViewTax.setText("$ 0.00");
+                                textViewTotal.setText("$ 0.00");
                             }
                         });
                 alertDialog.show();
@@ -224,5 +228,6 @@ public class Checkout extends AppCompatActivity {
         outState.putSerializable("RV_DATA3", (Serializable) HomeScreen.ourList.getItemPrice());
         //getChildFragmentManager().putFragment(outState, "bottom_dialog", bottomSheetDialogFrag);
     }
+
 
 }

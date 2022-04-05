@@ -56,6 +56,7 @@ public class CartItem {
     }
 
     public void clearCart(List<String> itemNames, List<String> itemQuan, List<String> itemPrice){
+
 //        itemNames.clear();
 //        itemQuan.clear();
 //        itemPrice.clear();

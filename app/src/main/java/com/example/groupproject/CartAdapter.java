@@ -57,5 +57,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
         return itemNames.size();
     }
 
+    public void clearCart() {
+        if (itemNames != null && !itemNames.isEmpty()) {
+            int size = itemNames.size();
+            itemNames.clear();
+            itemQuantities.clear();
+            itemPrices.clear();
+            notifyItemRangeRemoved(0, size);
+        }
+    }
+
 
 }
