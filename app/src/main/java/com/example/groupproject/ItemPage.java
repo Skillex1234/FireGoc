@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -44,6 +45,12 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
 
     String itemAmount;
     int numItems;
+
+    public static List<ReviewItem> revList = new ArrayList<>();
+    public static DatabaseReference itemScore;
+    public static DatabaseReference itemRevText;
+    public static ArrayList<String> scores = new ArrayList<>();
+    public static ArrayList<String> revs = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +73,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         //Get info from bundle
         Bundle itemPage = getIntent().getExtras();
         String itemLoc = itemPage.getString("item_name");
+        getReviewInfo(itemLoc);
         Bundle locationBundle = new Bundle();
         locationBundle.putString("itemLocation", itemLoc);
         Description desc = new Description();
@@ -74,6 +82,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         nf.setArguments(locationBundle);
         Recipes rp = new Recipes();
         Reviews rv = new Reviews();
+        rv.setArguments(locationBundle);
 
         ArrayList<String> itemNameList = itemPage.getStringArrayList("nameList");
         ArrayList<String> itemQuantityList = itemPage.getStringArrayList("qList");
@@ -192,6 +201,49 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
 
     }
 
+@Override
+    public void onBackPressed(){
+        revList.clear();
+        scores.clear();
+        revs.clear();
+        super.onBackPressed();
+}
 
+public void getReviewInfo(String itemName){
+    FirebaseDatabase db;
+    DatabaseReference dbRef;
+    db = FirebaseDatabase.getInstance();
+    dbRef = db.getReference();
+    itemScore = dbRef.child("Items").child(itemName).child("reviewScoreList");
+    itemScore.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            for(DataSnapshot ds : snapshot.getChildren()){
+                String score = ds.getValue(Long.class).toString();
+                scores.add(score);
+            }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    });
+    itemRevText = dbRef.child("Items").child(itemName).child("reviewTextList");
+    itemRevText.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            for(DataSnapshot ds : snapshot.getChildren()){
+                String rev = ds.getValue(String.class);
+                revs.add(rev);
+            }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    });
+}
 
 }

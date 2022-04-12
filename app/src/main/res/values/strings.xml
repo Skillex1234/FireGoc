@@ -45,4 +45,5 @@
     <string name="cvv">cvv</string>
     <string name="mm_yy">mm_yy</string>
     <string name="clearcart">Clear Cart</string>
+    <string name="reviewhint">write review here</string>
 </resources>

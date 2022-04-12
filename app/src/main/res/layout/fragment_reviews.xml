@@ -5,12 +5,36 @@
     android:layout_height="match_parent"
     tools:context=".Reviews">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textViewReviews"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/preview"
-        android:textColor="#FFFFFF" />
+    <RatingBar
+        android:id="@+id/ratingBarReviewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF" />
 
+    <EditText
+        android:id="@+id/editTextReviewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/reviewhint"
+        android:inputType="textMultiLine"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReviews"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="120dp" />
+
+    <Button
+        android:id="@+id/buttonSubmitReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="280dp"
+        android:backgroundTint="#FF5722"
+        android:text="@string/submit" />
 </FrameLayout>
