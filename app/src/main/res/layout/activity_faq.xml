@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:background="@drawable/logo"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/faq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:paddingLeft="25dp"
+        android:paddingTop="20dp"
+        android:singleLine="true"
+        android:text="   FAQ?"
+        android:textColor="@color/white"
+        android:textSize="80dp"
+        android:textStyle="bold" />
+
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/faq"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/faq1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:singleLine="true"
+                android:text="Frequently Asked Questions"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+            android:id="@+id/question1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+        android:layout_below="@id/faq1"
+            android:text="Q.Do you offer curbside pick-up?"
+            android:textColor="#ffbf4c"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question1"
+            android:text="A. Yes. We offer curbside pick-up."
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/question2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Answer1"
+            android:paddingTop="10dp"
+            android:text="Q.What is the curbside pick-up fee?"
+            android:textColor="#ffbf4c"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question2"
+            android:text="A. For curbside pick-up the fee is $10"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold"
+
+            />
+
+            <TextView
+                android:id="@+id/question3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Answer2"
+                android:paddingTop="10dp"
+                android:text="Q.How much does it cost to get a delivery?"
+                android:textColor="#ffbf4c"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question3"
+            android:text="A. Delivery fee is 10% of your total order."
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/question4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Answer3"
+            android:paddingTop="10dp"
+            android:text="Q.What is your return policy?"
+            android:textColor="#ffbf4c"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question4"
+            android:text="A. Return with the receipt in 7 days and you get a full refund, after 7 days store credit"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/question5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Answer4"
+            android:paddingTop="10dp"
+            android:text="Q.Do you accept any type of payments?"
+            android:textColor="#ffbf4c"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question5"
+            android:text="A.We gladly accept cash, debit, credit, paypal and apple pay."
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/question6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Answer5"
+                android:paddingTop="10dp"
+                android:text="Q.Do you have any gluten free items?"
+                android:textColor="#ffbf4c"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question6"
+            android:text="A.Yes we do have different varieties of gluten free items."
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/question7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Answer6"
+                android:paddingTop="10dp"
+                android:text="Q.Do you have dairy free items?"
+                android:textColor="#ffbf4c"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Answer7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question7"
+            android:text="A.Yes we carry dairy free items."
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/question8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Answer7"
+                android:paddingTop="10dp"
+                android:text="Q.Are pets allowed in the store?
+"
+                android:textColor="#ffbf4c"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Answer8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question8"
+                android:text="A. No - Service animals only"
+                android:textColor="@color/white"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/question9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Answer8"
+                android:paddingTop="10dp"
+                android:text="Q.Are face masks still required for Fire Grocery?"
+                android:textColor="#ffbf4c"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Answer9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question9"
+                android:text="A.No is not required for fully vaccinated. We recommend social distancing whenever possible."
+                android:textColor="@color/white"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>
