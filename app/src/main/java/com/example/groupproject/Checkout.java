@@ -38,6 +38,7 @@ public class Checkout extends AppCompatActivity {
     TextView textViewTotal;
 
     Button checkout;
+    Button clearCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,21 +108,47 @@ public class Checkout extends AppCompatActivity {
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(Checkout.this).create();
-                alertDialog.setTitle("Checkout Successful");
-                alertDialog.setMessage("Checkout success please check email for details");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                                adapter.clearCart();
-                                adapter.notifyDataSetChanged();
-                                textViewSubtotal.setText("$ 0.00");
-                                textViewTax.setText("$ 0.00");
-                                textViewTotal.setText("$ 0.00");
-                            }
-                        });
-                alertDialog.show();
+                if(!HomeScreen.ourList.getItemName().isEmpty()){
+                    AlertDialog alertDialog = new AlertDialog.Builder(Checkout.this).create();
+                    alertDialog.setTitle("Checkout Successful");
+                    alertDialog.setMessage("Checkout success please check email for details");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    adapter.clearCart();
+                                    adapter.notifyDataSetChanged();
+                                    textViewSubtotal.setText("$ 0.00");
+                                    textViewTax.setText("$ 0.00");
+                                    textViewTotal.setText("$ 0.00");
+                                }
+                            });
+                    alertDialog.show();
+                }
+                else{
+                    AlertDialog alertDialog = new AlertDialog.Builder(Checkout.this).create();
+                    alertDialog.setTitle("Checkout Failed");
+                    alertDialog.setMessage("Please add items to the cart to checkout");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }
+            }
+        });
+
+        clearCart = findViewById(R.id.buttonClearCart);
+        clearCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.clearCart();
+                adapter.notifyDataSetChanged();
+                textViewSubtotal.setText("$ 0.00");
+                textViewTax.setText("$ 0.00");
+                textViewTotal.setText("$ 0.00");
             }
         });
 

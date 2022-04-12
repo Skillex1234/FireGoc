@@ -9,31 +9,28 @@
 
     <Button
         android:id="@+id/checkout"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FF5722"
         android:text="@string/checkout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/chosepayment"
-        app:layout_constraintTop_toBottomOf="@+id/chosepayment"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintStart_toStartOf="@+id/chosepayment"
+        app:layout_constraintTop_toBottomOf="@+id/chosepayment" />
 
     <Button
         android:id="@+id/chosepayment"
-        android:layout_width="0dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FF5722"
         android:text="Payment Method"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecyclerViewCart" />
+        app:layout_constraintStart_toStartOf="@+id/buttonClearCart"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClearCart" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewCart"
         android:layout_width="409dp"
-        android:layout_height="494dp"
+        android:layout_height="475dp"
         android:paddingTop="96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,5 +131,16 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonClearCart"
+        android:layout_width="172dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="#FF5722"
+        android:text="@string/clearcart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RecyclerViewCart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
