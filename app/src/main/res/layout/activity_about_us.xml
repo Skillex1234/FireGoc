@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="130dp"
+        android:background="@drawable/logo"
+        android:layout_marginStart="30dp"
+
+        />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:paddingLeft="95dp"
+        android:singleLine="true"
+        android:text="About Us"
+        android:textColor="@color/white"
+        android:textSize="55dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="1412dp"
+        android:layout_below="@id/about"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/something"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="Something About Us"
+                android:textColor="#ffbf4c"
+                android:textSize="34dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="401dp"
+                android:layout_height="185dp"
+                android:layout_below="@id/something"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="17dp"
+                android:text="Fire Grocery is locally owned and operated! We Specialize in Home Delivery and Curb side pick-up!
+We carefully curate items that You request in every department! We keep our stores clean, well-organized, and well-stocked.
+We offer fast and friendly check-out. We are known for our enormous selection of Diet and nutrition food.
+    "
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="13dp"
+                android:text="Location"
+                android:textColor="#ffbf4c"
+                android:textSize="34dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="397dp"
+                android:layout_height="66dp"
+                android:layout_below="@id/contact"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="14dp"
+                android:text=" Address: 190 Merritt rd.Farmingdale, NY 11735\nPhone Number  (516) 621-6420\nEmail:   Firestore@gamil.com"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/location"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="47dp"
+                android:text="Store Hours"
+                android:textColor="#ffbf4c"
+                android:textSize="34dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hours"
+                android:layout_width="308dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hour"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="-3dp"
+                android:text="Monday:     7:00am-9:00pm\n Tuesday:    7:00am-9:00pm\nWednesday: 7:00am-9:00pm\nThursday:    7:00am-9:00pm\nFriday:         7:00am-8:00pm\nSaturday:     7:00am-7:00pm\nSunday:       7:00am-7:00pm\n
+    "
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hours"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="20dp"
+                android:text="We always welcome your feedback, and we pride ourselves on having served the communities that we operate in for generations!.
+    "
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+
+
+
