@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MeatsCategory extends AppCompatActivity {
 
     ImageView dino;
@@ -21,10 +23,17 @@ public class MeatsCategory extends AppCompatActivity {
     ImageView ribeye;
     ImageView wholeChicken;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meats_category);
+
+        Bundle itemPage = getIntent().getExtras();
+        ArrayList<String> itemNameList = itemPage.getStringArrayList("nameList");
+        ArrayList<String> itemQuantityList = itemPage.getStringArrayList("qList");
+        ArrayList<String> itemPriceList = itemPage.getStringArrayList("pList");
 
         dino = findViewById(R.id.dino);
         dinoText = findViewById(R.id.dinotext);
@@ -37,6 +46,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -53,6 +65,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -68,6 +83,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -83,6 +101,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -98,6 +119,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -113,6 +137,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -128,6 +155,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }
@@ -143,6 +173,9 @@ public class MeatsCategory extends AppCompatActivity {
                 Bundle extras = new Bundle();
                 extras.putString("item_name", itemName);
                 extras.putString("item_name_with_spaces", itemNameWithSpaces);
+                extras.putStringArrayList("nameList", itemNameList);
+                extras.putStringArrayList("qList", itemQuantityList);
+                extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
             }

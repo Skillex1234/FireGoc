@@ -36,4 +36,12 @@
     <string name="addToCart">Add To Cart</string>
     <string name="quantity">Quantity</string>
     <string name="preview">Coming Soon!</string>
+    <string name="sub">subtotal</string>
+    <string name="grandTotal">Total</string>
+    <string name="price">Price</string>
+    <string name="submit">submit</string>
+    <string name="card_holder_s_name">card_holder_s_name</string>
+    <string name="card_number">card_number</string>
+    <string name="cvv">cvv</string>
+    <string name="mm_yy">mm_yy</string>
 </resources>

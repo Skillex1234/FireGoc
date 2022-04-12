@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String[] quantity = {"1","2","3","4","5","6","7","8","9"};
@@ -72,6 +74,10 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         nf.setArguments(locationBundle);
         Recipes rp = new Recipes();
         Reviews rv = new Reviews();
+
+        ArrayList<String> itemNameList = itemPage.getStringArrayList("nameList");
+        ArrayList<String> itemQuantityList = itemPage.getStringArrayList("qList");
+        ArrayList<String> itemPriceList = itemPage.getStringArrayList("pList");
 
         //Make the description tab content appear when the page is loaded
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, desc).commit();
@@ -163,6 +169,11 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
                     cartBundle.putString("Amount", itemAmount);
                 }
                 cartBundle.putString("itemName", itemName.getText().toString());
+                cartBundle.putString("noSpaces", itemLoc);
+                cartBundle.putString("price", price.getText().toString());
+                cartBundle.putStringArrayList("nList", itemNameList);
+                cartBundle.putStringArrayList("pList", itemPriceList);
+                cartBundle.putStringArrayList("qList", itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
             }
