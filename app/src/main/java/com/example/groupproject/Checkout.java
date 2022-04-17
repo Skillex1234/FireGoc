@@ -16,15 +16,9 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.Serializable;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Checkout extends AppCompatActivity {
 
@@ -39,6 +33,7 @@ public class Checkout extends AppCompatActivity {
 
     Button checkout;
     Button clearCart;
+    Button chosepayment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +134,16 @@ public class Checkout extends AppCompatActivity {
                 }
             }
         });
+        //Payment Button
+        chosepayment = findViewById(R.id.chosepayment);
+        chosepayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Checkout.this, Payment.class));
+
+            }
+        });
+
 
         clearCart = findViewById(R.id.buttonClearCart);
         clearCart.setOnClickListener(new View.OnClickListener() {

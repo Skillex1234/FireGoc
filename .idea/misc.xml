@@ -35,9 +35,14 @@
         <entry key="..\:/Users/gonza_000/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/gonza_000/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gonza_000/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_checkout.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/activity_payment.xml" value="0.34010416666666665" />
+        <entry key="app/src/main/res/layout/activity_produce_category.xml" value="0.2509057971014493" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/payment.xml" value="0.26197916666666665" />
       </map>
     </option>
   </component>
