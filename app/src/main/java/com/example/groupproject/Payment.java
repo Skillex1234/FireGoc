@@ -43,6 +43,7 @@ public class Payment extends AppCompatActivity {
                 Toast.makeText(Payment.this, "Payment Successfully added!", Toast.LENGTH_SHORT).show();
             }
 
+            finish();
         }
     });
 
