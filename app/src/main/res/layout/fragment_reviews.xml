@@ -9,8 +9,9 @@
         android:id="@+id/ratingBarReviewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF" />
+        android:progressDrawable="@drawable/flame_bar"
+        android:background="#000000"
+        android:backgroundTint="#000000" />
 
     <EditText
         android:id="@+id/editTextReviewText"

@@ -4,7 +4,9 @@ import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,15 +21,18 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
     private List<String> itemQuantities;
     private List<String> itemPrices;
 
+    String[] quantity = new String[100];
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView textViewItemName;
-        public TextView textViewQuantity;
+        public Spinner spinnerQuantity;
         public TextView textViewPrice;
+
 
         public MyViewHolder(View view){
             super(view);
             textViewItemName = (TextView) view.findViewById(R.id.textViewItemNameCart);
-            textViewQuantity = (TextView) view.findViewById(R.id.textViewQuantityCart);
+            spinnerQuantity = (Spinner) view.findViewById(R.id.spinnerItemQuantity);
             textViewPrice = (TextView) view.findViewById(R.id.textViewPriceCart);
         }
     }
@@ -41,14 +46,18 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item_layout, parent, false);
+        for(int i = 1; i < quantity.length; i++){
+            quantity[i-1] = String.valueOf(i);
+        }
+
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position){
+        //Add spinner values somehow
         holder.textViewItemName.setText(itemNames.get(position));
-        holder.textViewQuantity.setText(itemQuantities.get(position));
         holder.textViewPrice.setText(itemPrices.get(position));
     }
 

@@ -2,10 +2,14 @@ package com.example.groupproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +34,7 @@ public class HomeScreen extends AppCompatActivity {
     TextView textViewFeaturedTwo;
     TextView textViewFeaturedThree;
     TextView textViewFeaturedFour;
+    Toolbar toolbar;
 
     public static CartItem ourList = new CartItem();
     private ArrayList<String> itemNameList = new ArrayList<String>();
@@ -41,6 +46,8 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+
+        //getActionBar().show();
 
         meatcategory = findViewById(R.id.buttonCategoryMeats);
         frozencategory = findViewById(R.id.buttonCategoryFrozen);
@@ -181,5 +188,38 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(itemPage);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menuItemAboutUs:
+                startActivity(new Intent(HomeScreen.this, AboutUs.class));
+                return true;
+            case R.id.menuItemFAQ:
+                startActivity(new Intent(HomeScreen.this, FAQ.class));
+                return true;
+            case R.id.menuItemLogout:
+                Intent i = new Intent(HomeScreen.this, Login.class);
+                this.itemNameList.clear();
+                this.itemPriceList.clear();
+                this.itemQuantityList.clear();
+                finish();
+                startActivity(i);
+                return true;
+            case R.id.menuItemCart:
+                //figure what to pass since we're not adding an item
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

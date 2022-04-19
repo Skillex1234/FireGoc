@@ -34,7 +34,7 @@ import java.util.List;
 
 public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    String[] quantity = {"1","2","3","4","5","6","7","8","9"};
+    String[] quantity = new String[100];
 
     ImageView image;
     TextView itemName;
@@ -56,6 +56,9 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_page);
+        for(int i = 1; i < quantity.length; i++){
+            quantity[i-1] = String.valueOf(i);
+        }
 
         image = findViewById(R.id.imageViewItem);
         itemName = findViewById(R.id.textViewItemName);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GroupProject</string>
+    <string name="app_name">Fire Groceries</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="forgot_password">Forgot password?</string>
@@ -46,4 +46,8 @@
     <string name="mm_yy">mm_yy</string>
     <string name="clearcart">Clear Cart</string>
     <string name="reviewhint">write review here</string>
+    <string name="faq">FAQ</string>
+    <string name="about">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="cart">Cart</string>
 </resources>

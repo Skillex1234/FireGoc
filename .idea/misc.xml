@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Owner/Desktop/GroupProject/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Owner/Desktop/GroupProject/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Owner/Desktop/GroupProject/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/drawable/flame_bar.xml" value="0.1" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.2565" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_about_us.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_beverages_category.xml" value="0.2346014492753623" />
@@ -16,7 +17,7 @@
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_dairy_category.xml" value="0.1796875" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_faq.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_frozen_category.xml" value="0.1796875" />
-        <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_home_screen.xml" value="0.136" />
+        <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_home_screen.xml" value="0.2" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_item_page.xml" value="0.2" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_login.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_meats_category.xml" value="0.264" />
@@ -30,6 +31,8 @@
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/fragment_reviews.xml" value="0.2" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/payment.xml" value="0.2" />
         <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/layout/review_layout.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/menu/main_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Richie/AndroidStudioProjects/FireGoc/app/src/main/res/menu/menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/blerina/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_sign_up.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/gonza_000/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_home_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gonza_000/AndroidStudioProjects/FireGoc/app/src/main/res/layout/activity_login.xml" value="0.33" />

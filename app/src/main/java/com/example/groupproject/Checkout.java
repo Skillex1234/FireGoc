@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class Checkout extends AppCompatActivity {
 
+
+
     //private List<CartItem> itemList = new ArrayList<>();
     private RecyclerView recyclerView;
     private CartAdapter adapter;
@@ -39,6 +41,7 @@ public class Checkout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
 
         recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewCart);
         adapter = new CartAdapter(HomeScreen.ourList.getItemName(), HomeScreen.ourList.getItemQuantity(), HomeScreen.ourList.getItemPrice());
@@ -75,9 +78,32 @@ public class Checkout extends AppCompatActivity {
             HomeScreen.ourList.restoreItemList(itemNameList, itemQuantityList, itemPriceList);
         }
 
-        HomeScreen.ourList.setItemName(name);
-        HomeScreen.ourList.setItemQuantity(quantity);
-        HomeScreen.ourList.setItemPrice(price);
+        if(HomeScreen.ourList.getItemName().contains(name)){
+            HomeScreen.ourList.updateItemQuantity(name, Integer.valueOf(quantity));
+            //get the subtotal and stuff
+            textViewSubtotal = findViewById(R.id.textViewSubAmt);
+            textViewTax = findViewById(R.id.textViewTaxAmt);
+            textViewTotal = findViewById(R.id.textViewTotalAmt);
+            Double subTotal = 0.00;
+            for(int i = 0; i < HomeScreen.ourList.getSize(); i++){
+                String p = HomeScreen.ourList.getItemPrice().get(i);
+                subTotal = subTotal + Double.valueOf(p);
+            }
+            String subTotalString = String.format("%.2f", subTotal);
+            Double tax = subTotal * 0.0875;
+            String taxString = String.format("%.2f", tax);
+            Double total = subTotal + tax;
+            String totalString = String.format("%.2f", total);
+            textViewSubtotal.setText("$ " + subTotalString);
+            textViewTax.setText("$ " + taxString);
+            textViewTotal.setText("$ " + totalString);
+        }
+        else{
+            HomeScreen.ourList.setItemName(name);
+            HomeScreen.ourList.setItemQuantity(quantity);
+            HomeScreen.ourList.setItemPrice(price);
+        }
+
         adapter.notifyDataSetChanged();
 
         //get the subtotal and stuff

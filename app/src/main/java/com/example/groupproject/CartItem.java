@@ -61,4 +61,15 @@ public class CartItem {
 //        itemQuan.clear();
 //        itemPrice.clear();
     }
+
+    public void updateItemQuantity(String itemName, int amount){
+        int pos = itemName.indexOf(itemName);
+        int prevQuan = Integer.valueOf(itemQuantity.get(pos));
+        Double prevPrice = Double.valueOf(itemPrice.get(pos));
+        prevPrice /= prevQuan;
+        prevQuan += amount;
+        prevPrice *= prevQuan;
+        itemQuantity.set(pos, String.valueOf(prevQuan));
+        itemPrice.set(pos, String.valueOf(prevPrice));
+    }
 }
