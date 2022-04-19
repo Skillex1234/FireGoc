@@ -9,6 +9,7 @@
         android:id="@+id/ratingBarReviewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:background="#000000"
         android:backgroundTint="#000000"
         android:isIndicator="true"
@@ -32,7 +33,6 @@
         android:id="@+id/textViewAverage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:text="@string/avgscore"
         android:textSize="24sp"
         android:textStyle="bold" />
