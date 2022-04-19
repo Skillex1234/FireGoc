@@ -76,5 +76,20 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
         }
     }
 
+    public void deleteItem(int pos){
+        itemNames.remove(pos);
+        itemPrices.remove(pos);
+        itemQuantities.remove(pos);
+        notifyItemRemoved(pos);
+        notifyDataSetChanged();
+    }
+
+    public void clearItems(){
+        itemNames.clear();
+        itemPrices.clear();
+        itemQuantities.clear();
+        notifyDataSetChanged();
+    }
+
 
 }

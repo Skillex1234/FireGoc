@@ -50,4 +50,5 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyViewHold
     public int getItemCount(){
         return reviewList.size();
     }
+
 }

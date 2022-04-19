@@ -3,6 +3,7 @@ package com.example.groupproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +27,7 @@ public class Checkout extends AppCompatActivity {
 
     //private List<CartItem> itemList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private CartAdapter adapter;
+    private CartAdapter adapter = HomeScreen.adapter;
     //public CartItem ourList;
 
     TextView textViewSubtotal;
@@ -44,7 +45,7 @@ public class Checkout extends AppCompatActivity {
 
 
         recyclerView = (RecyclerView) findViewById(R.id.RecyclerViewCart);
-        adapter = new CartAdapter(HomeScreen.ourList.getItemName(), HomeScreen.ourList.getItemQuantity(), HomeScreen.ourList.getItemPrice());
+
         RecyclerView.LayoutManager layoutManager =
                 new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -97,6 +98,9 @@ public class Checkout extends AppCompatActivity {
             textViewSubtotal.setText("$ " + subTotalString);
             textViewTax.setText("$ " + taxString);
             textViewTotal.setText("$ " + totalString);
+        }
+        else if(name.equals("NO_ITEM")){
+
         }
         else{
             HomeScreen.ourList.setItemName(name);
@@ -182,6 +186,8 @@ public class Checkout extends AppCompatActivity {
                 textViewTotal.setText("$ 0.00");
             }
         });
+
+        enableSwipeToDeleteAndUndo();
 
 
         //add data to list
@@ -285,6 +291,38 @@ public class Checkout extends AppCompatActivity {
         outState.putSerializable("RV_DATA2", (Serializable) HomeScreen.ourList.getItemQuantity());
         outState.putSerializable("RV_DATA3", (Serializable) HomeScreen.ourList.getItemPrice());
         //getChildFragmentManager().putFragment(outState, "bottom_dialog", bottomSheetDialogFrag);
+    }
+
+    public void enableSwipeToDeleteAndUndo() {
+        SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(this) {
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+
+                final int position = viewHolder.getAdapterPosition();
+
+                adapter.deleteItem(position);
+
+                Double subTotal = 0.00;
+                for(int x = 0; x < HomeScreen.ourList.getSize(); x++){
+                    String p = HomeScreen.ourList.getItemPrice().get(x);
+                    subTotal = subTotal + Double.valueOf(p);
+                }
+                String subTotalString = String.format("%.2f", subTotal);
+                Double tax = subTotal * 0.0875;
+                String taxString = String.format("%.2f", tax);
+                Double total = subTotal + tax;
+                String totalString = String.format("%.2f", total);
+                textViewSubtotal.setText("$ " + subTotalString);
+                textViewTax.setText("$ " + taxString);
+                textViewTotal.setText("$ " + totalString);
+
+            }
+        };
+
+        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeToDeleteCallback);
+        itemTouchhelper.attachToRecyclerView(recyclerView);
+
     }
 
 

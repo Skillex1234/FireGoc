@@ -1,8 +1,10 @@
 package com.example.groupproject;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,10 +41,12 @@ public class Reviews extends Fragment {
     private DatabaseReference itemRevText;
     private ArrayList<String> scores = new ArrayList<>();
     private ArrayList<String> revs = new ArrayList<>();*/
+    public static float reviewScore;
+    public static String newReviewText;
 
     Button submitReview;
     RatingBar ratingScore;
-    EditText reviewText;
+    TextView reviewText;
 
     public Reviews() {
         // Required empty public constructor
@@ -99,38 +103,75 @@ public class Reviews extends Fragment {
             }
         });*/
 
-        for(int i = 0; i < ItemPage.scores.size(); i++){
+        float avg = 0.00f;
+        for(int i = 0; i < ItemPage.revs.size(); i++){
             ItemPage.revList.add(new ReviewItem(ItemPage.revs.get(i), Float.valueOf(ItemPage.scores.get(i))));
+            avg += Float.valueOf(ItemPage.scores.get(i));
         }
+        avg /= ItemPage.scores.size();
 
         ratingScore = (RatingBar) view.findViewById(R.id.ratingBarReviewScore);
-        reviewText = (EditText) view.findViewById(R.id.editTextReviewText);
+        reviewText = (TextView) view.findViewById(R.id.textViewAverage);
 
+        ratingScore.setRating(avg);
+
+        //Review button
         submitReview = (Button) view.findViewById(R.id.buttonSubmitReview);
         submitReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String keyScore = dbRef.child("Items").child(itemName).child("reviewScoreList").push().getKey();
-                String keyText = dbRef.child("Items").child(itemName).child("reviewTextList").push().getKey();
-
-                Map<String, Object> scoreMap = new HashMap<>();
-                Map<String, Object> textMap = new HashMap<>();
-
-                scoreMap.put(keyScore, ratingScore.getRating());
-                textMap.put(keyText, reviewText.getText().toString());
-
-                dbRef.child("Items").child(itemName).child("reviewScoreList").updateChildren(scoreMap);
-                dbRef.child("Items").child(itemName).child("reviewTextList").updateChildren(textMap);
-
-                ItemPage.revList.add(new ReviewItem(reviewText.getText().toString(), ratingScore.getRating()));
-                adapter.notifyDataSetChanged();
-
-                reviewText.setText("");
-                ratingScore.setRating(0);
+                showDialog(itemName);
             }
         });
+
+
+
 
         return view;
     }
 
+    public void showDialog(String itemName){
+        String keyScore = dbRef.child("Items").child(itemName).child("reviewScoreList").push().getKey();
+        String keyText = dbRef.child("Items").child(itemName).child("reviewTextList").push().getKey();
+        Map<String, Object> scoreMap = new HashMap<>();
+        Map<String, Object> textMap = new HashMap<>();
+
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
+        alertDialog.setTitle("Submit Review");
+        final View customLayout = getLayoutInflater().inflate(R.layout.fragment_reviews_popup, null);
+        alertDialog.setView(customLayout);
+
+        alertDialog.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // send data from the AlertDialog to the Activity
+                EditText editText = customLayout.findViewById(R.id.editTextReviewTextPopup);
+                RatingBar rb = customLayout.findViewById(R.id.ratingBarReviewScore);
+                Reviews.newReviewText = editText.getText().toString();
+                Reviews.reviewScore = rb.getRating();
+
+
+
+                scoreMap.put(keyScore, reviewScore);
+                textMap.put(keyText, newReviewText);
+
+                dbRef.child("Items").child(itemName).child("reviewScoreList").updateChildren(scoreMap);
+                dbRef.child("Items").child(itemName).child("reviewTextList").updateChildren(textMap);
+
+                ItemPage.revList.add(new ReviewItem(Reviews.newReviewText, Reviews.reviewScore));
+                adapter.notifyDataSetChanged();
+
+                float avg = 0.00f;
+                for(int i = 0; i < ItemPage.revs.size(); i++){
+                    avg += Float.valueOf(ItemPage.scores.get(i));
+                }
+                avg /= ItemPage.scores.size();
+                ratingScore.setRating(avg);
+            }
+        });
+
+        AlertDialog dialog = alertDialog.create();
+        dialog.show();
+
+    }
 }

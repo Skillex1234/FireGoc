@@ -11,7 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,15 +40,18 @@ public class HomeScreen extends AppCompatActivity {
     Toolbar toolbar;
 
     public static CartItem ourList = new CartItem();
-    private ArrayList<String> itemNameList = new ArrayList<String>();
-    private ArrayList<String> itemQuantityList = new ArrayList<String>();
-    private ArrayList<String> itemPriceList = new ArrayList<String>();
+    public static CartAdapter adapter;
+    public static ArrayList<String> itemNameList = new ArrayList<String>();
+    public static ArrayList<String> itemQuantityList = new ArrayList<String>();
+    public static ArrayList<String> itemPriceList = new ArrayList<String>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+
+        adapter = new CartAdapter(HomeScreen.ourList.getItemName(), HomeScreen.ourList.getItemQuantity(), HomeScreen.ourList.getItemPrice());
 
         //getActionBar().show();
 
@@ -64,6 +70,7 @@ public class HomeScreen extends AppCompatActivity {
         listBundle.putStringArrayList("nameList", itemNameList);
         listBundle.putStringArrayList("quantityList", itemQuantityList);
         listBundle.putStringArrayList("priceList", itemPriceList);
+
 
         meatcategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,6 +195,7 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(itemPage);
             }
         });
+
     }
 
     @Override
@@ -209,17 +217,31 @@ public class HomeScreen extends AppCompatActivity {
                 return true;
             case R.id.menuItemLogout:
                 Intent i = new Intent(HomeScreen.this, Login.class);
-                this.itemNameList.clear();
-                this.itemPriceList.clear();
-                this.itemQuantityList.clear();
-                finish();
+                itemNameList.clear();
+                itemPriceList.clear();
+                itemQuantityList.clear();
+                adapter.clearItems();
+                adapter.notifyDataSetChanged();
+                finishAffinity();
                 startActivity(i);
                 return true;
             case R.id.menuItemCart:
                 //figure what to pass since we're not adding an item
+                Intent cartPage = new Intent(HomeScreen.this, Checkout.class);
+                Bundle cartBundle = new Bundle();
+                cartBundle.putString("Amount", "0");
+                cartBundle.putString("itemName", "NO_ITEM");
+                cartBundle.putString("noSpaces", "NO_ITEM");
+                cartBundle.putString("price", "$ 0.00");
+                cartBundle.putStringArrayList("nList", itemNameList);
+                cartBundle.putStringArrayList("pList", itemPriceList);
+                cartBundle.putStringArrayList("qList", itemQuantityList);
+                cartPage.putExtras(cartBundle);
+                startActivity(cartPage);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

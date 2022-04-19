@@ -9,6 +9,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -249,4 +252,49 @@ public void getReviewInfo(String itemName){
     });
 }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menuItemAboutUs:
+                startActivity(new Intent(ItemPage.this, AboutUs.class));
+                return true;
+            case R.id.menuItemFAQ:
+                startActivity(new Intent(ItemPage.this, FAQ.class));
+                return true;
+            case R.id.menuItemLogout:
+                Intent i = new Intent(ItemPage.this, Login.class);
+                HomeScreen.itemNameList.clear();
+                HomeScreen.itemPriceList.clear();
+                HomeScreen.itemQuantityList.clear();
+                HomeScreen.adapter.clearItems();
+                HomeScreen.adapter.notifyDataSetChanged();
+                finishAffinity();
+                startActivity(i);
+                return true;
+            case R.id.menuItemCart:
+                //figure what to pass since we're not adding an item
+                Intent cartPage = new Intent(ItemPage.this, Checkout.class);
+                Bundle cartBundle = new Bundle();
+                cartBundle.putString("Amount", "0");
+                cartBundle.putString("itemName", "NO_ITEM");
+                cartBundle.putString("noSpaces", "NO_ITEM");
+                cartBundle.putString("price", "$ 0.00");
+                cartBundle.putStringArrayList("nList", HomeScreen.itemNameList);
+                cartBundle.putStringArrayList("pList", HomeScreen.itemPriceList);
+                cartBundle.putStringArrayList("qList", HomeScreen.itemQuantityList);
+                cartPage.putExtras(cartBundle);
+                startActivity(cartPage);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

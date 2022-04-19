@@ -50,4 +50,6 @@
     <string name="about">About Us</string>
     <string name="logout">Logout</string>
     <string name="cart">Cart</string>
+    <string name="subreview">Submit New Review</string>
+    <string name="avgscore">Average Review Score</string>
 </resources>
