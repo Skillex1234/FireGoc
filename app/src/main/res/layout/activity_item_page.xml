@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewItemName"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="80dp"
             android:layout_toEndOf="@+id/imageViewItem"
             android:text="@string/placeholder"
             android:textColor="#FFFFFF"
@@ -108,7 +108,7 @@
             android:layout_below="@+id/textViewPrice"
             android:layout_alignStart="@+id/textViewPrice"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#FF5722"
             android:text="@string/addToCart" />
 
@@ -117,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewPrice"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:layout_toStartOf="@+id/buttonAddToCart"
             android:backgroundTint="#FFFFFF" />
@@ -129,7 +129,7 @@
             android:layout_below="@+id/textViewPrice"
             android:layout_alignStart="@+id/imageViewItem"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:text="@string/quantity"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
@@ -138,10 +138,10 @@
             android:id="@+id/imageButtonFavorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textViewItemName"
+            android:layout_below="@+id/textViewItemName"
+            android:layout_alignStart="@+id/textViewItemName"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:layout_toEndOf="@+id/textViewItemName"
             app:srcCompat="@drawable/ic_baseline_star_border_24" />
 
     </RelativeLayout>
