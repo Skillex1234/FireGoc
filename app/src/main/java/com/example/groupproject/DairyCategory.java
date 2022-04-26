@@ -50,6 +50,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -68,6 +69,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -86,6 +88,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -104,6 +107,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -122,6 +126,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -140,6 +145,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -158,6 +164,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -176,6 +183,7 @@ public class DairyCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -221,6 +229,9 @@ public class DairyCategory extends AppCompatActivity {
                 cartBundle.putStringArrayList("qList", HomeScreen.itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemFavorites:
+                startActivity(new Intent(DairyCategory.this, FavoritesList.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

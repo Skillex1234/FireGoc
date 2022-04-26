@@ -14,6 +14,9 @@
         android:id="@+id/menuItemAboutUs"
         android:title="@string/about" />
     <item
+        android:id="@+id/menuItemFavorites"
+        android:title="@string/favs" />
+    <item
         android:id="@+id/menuItemLogout"
         android:title="@string/logout" />
 </menu>

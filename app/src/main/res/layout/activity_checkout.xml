@@ -11,19 +11,9 @@
         android:id="@+id/checkout"
         android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#FF5722"
         android:text="@string/checkout"
-        app:layout_constraintStart_toStartOf="@+id/chosepayment"
-        app:layout_constraintTop_toBottomOf="@+id/chosepayment" />
-
-    <Button
-        android:id="@+id/chosepayment"
-        android:layout_width="174dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#FF5722"
-        android:text="Payment Method"
         app:layout_constraintStart_toStartOf="@+id/buttonClearCart"
         app:layout_constraintTop_toBottomOf="@+id/buttonClearCart" />
 

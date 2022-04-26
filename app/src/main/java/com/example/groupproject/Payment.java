@@ -1,7 +1,9 @@
 package com.example.groupproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Payment extends AppCompatActivity {
-    TextView payment_tv;
+    TextView payment_tv, grandTotal;
     EditText cardHolderName, cvvNumber, cardNumber, expirationDate;
     Button submitButton;
 
@@ -20,12 +22,18 @@ public class Payment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
+        Bundle fromCart = getIntent().getExtras();
+        String price = fromCart.getString("price");
+
         cardHolderName = findViewById(R.id.cardHolderName);
         cvvNumber = findViewById(R.id.cvvNumber);
         cardNumber = findViewById(R.id.cardNumber);
         expirationDate = findViewById(R.id.expirationDate);
         payment_tv = findViewById(R.id.payment_tv);
         submitButton = findViewById(R.id.submitButton);
+        grandTotal = findViewById(R.id.textViewGrandTotal);
+
+        grandTotal.setText("Grand Total: " + price);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
 
@@ -40,12 +48,22 @@ public class Payment extends AppCompatActivity {
                 Toast.makeText(Payment.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(Payment.this, "Payment Successfully added!", Toast.LENGTH_SHORT).show();
+                AlertDialog alertDialog = new AlertDialog.Builder(Payment.this).create();
+                alertDialog.setTitle("Checkout Successful");
+                alertDialog.setMessage("Checkout success please check email for details");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                finish();
+                            }
+                        });
+                alertDialog.show();
             }
-
-            finish();
         }
     });
+
+
 
     }
 }

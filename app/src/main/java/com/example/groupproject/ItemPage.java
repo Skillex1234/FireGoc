@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -29,11 +30,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -45,6 +49,8 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
     TabLayout tabLayout;
     Spinner itemQuantity;
     Button addToCart;
+    ImageButton favorite;
+    private boolean isFavorited;
 
     String itemAmount;
     int numItems;
@@ -59,6 +65,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_page);
+
         for(int i = 1; i < quantity.length; i++){
             quantity[i-1] = String.valueOf(i);
         }
@@ -69,8 +76,9 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         tabLayout = findViewById(R.id.tabLayout);
         itemQuantity = findViewById(R.id.spinnerQuantity);
         addToCart = findViewById(R.id.buttonAddToCart);
+        favorite = findViewById(R.id.imageButtonFavorites);
 
-        //Set values for dropdown
+        //add values to spinner
         ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, quantity);
         ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         itemQuantity.setAdapter(ad);
@@ -89,6 +97,14 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         Recipes rp = new Recipes();
         Reviews rv = new Reviews();
         rv.setArguments(locationBundle);
+
+        if(HomeScreen.favoriteItems.contains(itemLoc)){
+            isFavorited = true;
+            favorite.setImageResource(R.drawable.ic_baseline_star_24);
+        }
+        else{
+            isFavorited = false;
+        }
 
         ArrayList<String> itemNameList = itemPage.getStringArrayList("nameList");
         ArrayList<String> itemQuantityList = itemPage.getStringArrayList("qList");
@@ -191,6 +207,52 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
                 cartBundle.putStringArrayList("qList", itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                finish();
+            }
+        });
+
+        //Favorites list
+        DatabaseReference favorites = dbRef.child("Users").child(Login.username).child("Favorites");
+
+
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isFavorited == true){
+                    Query q = favorites.orderByChild(itemPage.getString("item_name_with_spaces")).equalTo(itemPage.getString("item_name_with_spaces"));
+                    q.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            snapshot.getRef().removeValue();
+
+                            int index = HomeScreen.favoriteItems.indexOf(itemPage.getString("item_name_with_spaces"));
+                            HomeScreen.favoriteItems.remove(index);
+                            for (int x = 0 ; x < HomeScreen.favoriteItems.size(); x++){
+                                String keyFav = dbRef.child("Users").child(Login.username).child("Favorites").push().getKey();
+                                Map<String, Object> favs = new HashMap<>();
+                                favs.put(keyFav, HomeScreen.favoriteItems.get(x));
+                                dbRef.child("Users").child(Login.username).child("Favorites").updateChildren(favs);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    favorite.setImageResource(R.drawable.ic_baseline_star_border_24);
+                    isFavorited = false;
+                }
+                else{
+                    String keyFav = dbRef.child("Users").child(Login.username).child("Favorites").push().getKey();
+                    Map<String, Object> favs = new HashMap<>();
+                    HomeScreen.favoriteItems.add(itemPage.getString("item_name_with_spaces"));
+                    favorite.setImageResource(R.drawable.ic_baseline_star_24);
+                    isFavorited = true;
+                    favs.put(keyFav, itemPage.getString("item_name_with_spaces"));
+                    dbRef.child("Users").child(Login.username).child("Favorites").updateChildren(favs);
+                }
             }
         });
 
@@ -292,6 +354,9 @@ public void getReviewInfo(String itemName){
                 cartBundle.putStringArrayList("qList", HomeScreen.itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemFavorites:
+                startActivity(new Intent(ItemPage.this, FavoritesList.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

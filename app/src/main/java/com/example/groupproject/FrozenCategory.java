@@ -49,6 +49,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -67,6 +68,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -85,6 +87,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -103,6 +106,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -121,6 +125,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -139,6 +144,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -157,6 +163,7 @@ public class FrozenCategory extends AppCompatActivity {
                 extras.putStringArrayList("pList", itemPriceList);
                 itemPage.putExtras(extras);
                 startActivity(itemPage);
+                finish();
             }
         });
 
@@ -202,6 +209,9 @@ public class FrozenCategory extends AppCompatActivity {
                 cartBundle.putStringArrayList("qList", HomeScreen.itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemFavorites:
+                startActivity(new Intent(FrozenCategory.this, FavoritesList.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

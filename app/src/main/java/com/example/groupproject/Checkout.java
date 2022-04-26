@@ -134,21 +134,17 @@ public class Checkout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!HomeScreen.ourList.getItemName().isEmpty()){
-                    AlertDialog alertDialog = new AlertDialog.Builder(Checkout.this).create();
-                    alertDialog.setTitle("Checkout Successful");
-                    alertDialog.setMessage("Checkout success please check email for details");
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                    adapter.clearCart();
-                                    adapter.notifyDataSetChanged();
-                                    textViewSubtotal.setText("$ 0.00");
-                                    textViewTax.setText("$ 0.00");
-                                    textViewTotal.setText("$ 0.00");
-                                }
-                            });
-                    alertDialog.show();
+                    Bundle priceBundle = new Bundle();
+                    priceBundle.putString("price", textViewTotal.getText().toString());
+                    Intent i = new Intent(Checkout.this, Payment.class);
+                    i.putExtras(priceBundle);
+                    startActivity(i);
+                    adapter.clearCart();
+                    textViewSubtotal.setText("$ 0.00");
+                    textViewTax.setText("$ 0.00");
+                    textViewTotal.setText("$ 0.00");
+                    adapter.notifyDataSetChanged();
+                    finish();
                 }
                 else{
                     AlertDialog alertDialog = new AlertDialog.Builder(Checkout.this).create();
@@ -164,17 +160,6 @@ public class Checkout extends AppCompatActivity {
                 }
             }
         });
-        //Payment Button
-        chosepayment = findViewById(R.id.chosepayment);
-        chosepayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Checkout.this, Payment.class));
-
-            }
-        });
-
-
         clearCart = findViewById(R.id.buttonClearCart);
         clearCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -224,62 +209,6 @@ public class Checkout extends AppCompatActivity {
     }
 
     @Override
-    public void onResume(){
-        super.onResume();
-
-//        // Get shared preferences object
-//        Context context = Checkout.this;
-//        SharedPreferences sp =
-//                PreferenceManager.getDefaultSharedPreferences(context);
-//        // Get the shared preferences editor
-//        SharedPreferences.Editor editor = sp.edit();
-//        // Set preference values to save
-//
-//        // Actually save values
-//        editor.apply();
-//
-//        Bundle fromItemPage = getIntent().getExtras();
-//        String name = fromItemPage.getString("itemName");
-//        String loc = fromItemPage.getString("noSpaces");
-//        String quantity = fromItemPage.getString("Amount");
-//        String price = fromItemPage.getString("price");
-//        price = price.substring(2);
-//        Double cost = Double.valueOf(quantity) * Double.valueOf(price);
-//        price = String.format("%.2f", cost);
-//
-//        ArrayList<String> itemNameList = fromItemPage.getStringArrayList("nameList");
-//        ArrayList<String> itemQuantityList = fromItemPage.getStringArrayList("qList");
-//        ArrayList<String> itemPriceList = fromItemPage.getStringArrayList("pList");
-//
-//
-//
-//        ourList.setItemName(name);
-//        ourList.setItemQuantity(quantity);
-//        ourList.setItemPrice(price);
-//        adapter.notifyDataSetChanged();
-//
-//        //get the subtotal and stuff
-//        textViewSubtotal = findViewById(R.id.textViewSubAmt);
-//        textViewTax = findViewById(R.id.textViewTaxAmt);
-//        textViewTotal = findViewById(R.id.textViewTotalAmt);
-//        Double subTotal = 0.00;
-//        for(int i = 0; i < ourList.getSize(); i++){
-//            String p = ourList.getItemPrice().get(i);
-//            subTotal = subTotal + Double.valueOf(p);
-//        }
-//        String subTotalString = String.format("%.2f", subTotal);
-//        Double tax = subTotal * 0.0875;
-//        String taxString = String.format("%.2f", tax);
-//        Double total = subTotal + tax;
-//        String totalString = String.format("%.2f", total);
-//        textViewSubtotal.setText(subTotalString);
-//        textViewTax.setText(taxString);
-//        textViewTotal.setText(totalString);
-
-
-    }
-
-    @Override
     public void onSaveInstanceState(@NonNull  Bundle outState){
         Parcelable rvState = recyclerView.getLayoutManager().onSaveInstanceState();
         super.onSaveInstanceState(outState);
@@ -324,6 +253,7 @@ public class Checkout extends AppCompatActivity {
         itemTouchhelper.attachToRecyclerView(recyclerView);
 
     }
+
 
 
 }

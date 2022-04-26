@@ -25,6 +25,8 @@ public class Login extends AppCompatActivity {
     TextView register, forgot;
     DatabaseReference databaseReference;
 
+    public static String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,7 @@ public class Login extends AppCompatActivity {
                                 String passfromdatabase = snapshot.child(userTxt).child("Password").getValue(String.class);
                                 if(passfromdatabase.equals(passwordTxt)){
                                     Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    username = userTxt;
                                     startActivity(new Intent(Login.this, HomeScreen.class));
 
 

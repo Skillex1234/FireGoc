@@ -16,6 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,13 +43,13 @@ public class HomeScreen extends AppCompatActivity {
     TextView textViewFeaturedTwo;
     TextView textViewFeaturedThree;
     TextView textViewFeaturedFour;
-    Toolbar toolbar;
 
     public static CartItem ourList = new CartItem();
     public static CartAdapter adapter;
     public static ArrayList<String> itemNameList = new ArrayList<String>();
     public static ArrayList<String> itemQuantityList = new ArrayList<String>();
     public static ArrayList<String> itemPriceList = new ArrayList<String>();
+    public static ArrayList<String> favoriteItems = new ArrayList<>();
 
 
     @Override
@@ -196,6 +202,25 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+        //Initialize favorites list from firebase
+        FirebaseDatabase fb = FirebaseDatabase.getInstance();
+        DatabaseReference ref = fb.getReference();
+        DatabaseReference favRef = ref.child("Users").child(Login.username).child("Favorites");
+        favRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds : snapshot.getChildren()){
+                    String fav = ds.getValue().toString();
+                    favoriteItems.add(fav);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     @Override
@@ -221,6 +246,7 @@ public class HomeScreen extends AppCompatActivity {
                 itemPriceList.clear();
                 itemQuantityList.clear();
                 adapter.clearItems();
+                favoriteItems.clear();
                 adapter.notifyDataSetChanged();
                 finishAffinity();
                 startActivity(i);
@@ -238,6 +264,9 @@ public class HomeScreen extends AppCompatActivity {
                 cartBundle.putStringArrayList("qList", itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemFavorites:
+                startActivity(new Intent(HomeScreen.this, FavoritesList.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
