@@ -1,5 +1,6 @@
 package com.example.groupproject;
 
+import android.content.Context;
 import android.media.Image;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -30,12 +32,39 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
         public TextView textViewItemName;
         public TextView cartQuantity;
         public TextView textViewPrice;
+        public Button subButton;
+        public Button addButton;
 
         public MyViewHolder(View view){
             super(view);
             textViewItemName = (TextView) view.findViewById(R.id.textViewItemNameCart);
             cartQuantity = (TextView) view.findViewById(R.id.textViewQuantity);
             textViewPrice = (TextView) view.findViewById(R.id.textViewPriceCart);
+            subButton = (Button) view.findViewById(R.id.buttonSubQuantity);
+            addButton = (Button) view.findViewById(R.id.buttonIncQuantity);
+
+            subButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(Integer.valueOf(cartQuantity.getText().toString()) > 1){
+                        HomeScreen.ourList.updateItemQuantity(textViewItemName.getText().toString(), -1);
+                        HomeScreen.adapter.notifyDataSetChanged();
+                    }
+                    else if (Integer.valueOf(cartQuantity.getText().toString()) == 1){
+                        deleteItem(HomeScreen.ourList.getItemName().indexOf(textViewItemName.getText().toString()));
+                        HomeScreen.adapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+            addButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    HomeScreen.ourList.updateItemQuantity(textViewItemName.getText().toString(), 1);
+                    HomeScreen.adapter.notifyDataSetChanged();
+
+                }
+            });
         }
     }
 

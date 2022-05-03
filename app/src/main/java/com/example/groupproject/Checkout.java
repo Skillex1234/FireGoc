@@ -36,7 +36,7 @@ public class Checkout extends AppCompatActivity {
 
     Button checkout;
     Button clearCart;
-    Button chosepayment;
+    Button updateTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,8 @@ public class Checkout extends AppCompatActivity {
         if(HomeScreen.ourList.getItemName().contains(name)){
             HomeScreen.ourList.updateItemQuantity(name, Integer.valueOf(quantity));
             //get the subtotal and stuff
-            textViewSubtotal = findViewById(R.id.textViewSubAmt);
+            updateSubtotalAndStuff();
+            /*textViewSubtotal = findViewById(R.id.textViewSubAmt);
             textViewTax = findViewById(R.id.textViewTaxAmt);
             textViewTotal = findViewById(R.id.textViewTotalAmt);
             Double subTotal = 0.00;
@@ -97,7 +98,7 @@ public class Checkout extends AppCompatActivity {
             String totalString = String.format("%.2f", total);
             textViewSubtotal.setText("$ " + subTotalString);
             textViewTax.setText("$ " + taxString);
-            textViewTotal.setText("$ " + totalString);
+            textViewTotal.setText("$ " + totalString);*/
         }
         else if(name.equals("NO_ITEM")){
 
@@ -111,7 +112,8 @@ public class Checkout extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         //get the subtotal and stuff
-        textViewSubtotal = findViewById(R.id.textViewSubAmt);
+        updateSubtotalAndStuff();
+        /*textViewSubtotal = findViewById(R.id.textViewSubAmt);
         textViewTax = findViewById(R.id.textViewTaxAmt);
         textViewTotal = findViewById(R.id.textViewTotalAmt);
         Double subTotal = 0.00;
@@ -126,7 +128,7 @@ public class Checkout extends AppCompatActivity {
         String totalString = String.format("%.2f", total);
         textViewSubtotal.setText("$ " + subTotalString);
         textViewTax.setText("$ " + taxString);
-        textViewTotal.setText("$ " + totalString);
+        textViewTotal.setText("$ " + totalString);*/
 
         //Checkout button
         checkout = findViewById(R.id.checkout);
@@ -173,6 +175,14 @@ public class Checkout extends AppCompatActivity {
         });
 
         enableSwipeToDeleteAndUndo();
+
+        updateTotal = findViewById(R.id.buttonUpdateTotals);
+        updateTotal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateSubtotalAndStuff();
+            }
+        });
 
 
         //add data to list
@@ -252,6 +262,26 @@ public class Checkout extends AppCompatActivity {
         ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeToDeleteCallback);
         itemTouchhelper.attachToRecyclerView(recyclerView);
 
+    }
+
+    public void updateSubtotalAndStuff(){
+        //get the subtotal and stuff
+        textViewSubtotal = findViewById(R.id.textViewSubAmt);
+        textViewTax = findViewById(R.id.textViewTaxAmt);
+        textViewTotal = findViewById(R.id.textViewTotalAmt);
+        Double subTotal = 0.00;
+        for(int i = 0; i < HomeScreen.ourList.getSize(); i++){
+            String p = HomeScreen.ourList.getItemPrice().get(i);
+            subTotal = subTotal + Double.valueOf(p);
+        }
+        String subTotalString = String.format("%.2f", subTotal);
+        Double tax = subTotal * 0.0875;
+        String taxString = String.format("%.2f", tax);
+        Double total = subTotal + tax;
+        String totalString = String.format("%.2f", total);
+        textViewSubtotal.setText("$ " + subTotalString);
+        textViewTax.setText("$ " + taxString);
+        textViewTotal.setText("$ " + totalString);
     }
 
 

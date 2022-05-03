@@ -192,6 +192,7 @@ public class FrozenCategory extends AppCompatActivity {
                 HomeScreen.itemPriceList.clear();
                 HomeScreen.itemQuantityList.clear();
                 HomeScreen.adapter.clearItems();
+                HomeScreen.favoriteItems.clear();
                 HomeScreen.adapter.notifyDataSetChanged();
                 finishAffinity();
                 startActivity(i);

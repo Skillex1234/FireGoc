@@ -66,7 +66,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_page);
 
-        for(int i = 1; i < quantity.length; i++){
+        for(int i = 1; i < quantity.length+1; i++){
             quantity[i-1] = String.valueOf(i);
         }
 
@@ -98,7 +98,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
         Reviews rv = new Reviews();
         rv.setArguments(locationBundle);
 
-        if(HomeScreen.favoriteItems.contains(itemLoc)){
+        if(HomeScreen.favoriteItems.contains(itemPage.getString("item_name_with_spaces"))){
             isFavorited = true;
             favorite.setImageResource(R.drawable.ic_baseline_star_24);
         }
@@ -337,6 +337,7 @@ public void getReviewInfo(String itemName){
                 HomeScreen.itemPriceList.clear();
                 HomeScreen.itemQuantityList.clear();
                 HomeScreen.adapter.clearItems();
+                HomeScreen.favoriteItems.clear();
                 HomeScreen.adapter.notifyDataSetChanged();
                 finishAffinity();
                 startActivity(i);

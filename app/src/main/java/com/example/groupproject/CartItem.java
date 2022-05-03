@@ -62,14 +62,16 @@ public class CartItem {
 //        itemPrice.clear();
     }
 
-    public void updateItemQuantity(String itemName, int amount){
-        int pos = itemName.indexOf(itemName);
+    public void updateItemQuantity(String name, int amount){
+        //pos is not getting pos > 1
+        int pos = itemName.indexOf(name);
         int prevQuan = Integer.valueOf(itemQuantity.get(pos));
         Double prevPrice = Double.valueOf(itemPrice.get(pos));
         prevPrice /= prevQuan;
         prevQuan += amount;
         prevPrice *= prevQuan;
         itemQuantity.set(pos, String.valueOf(prevQuan));
-        itemPrice.set(pos, String.valueOf(prevPrice));
+        String newPrice = String.format("%.2f", prevPrice);
+        itemPrice.set(pos, newPrice);
     }
 }
