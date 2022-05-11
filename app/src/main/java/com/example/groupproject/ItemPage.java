@@ -125,9 +125,6 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
                     case "Nutrition Facts" :
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, nf).commit();
                         break;
-                    case "Recipes" :
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, rp).commit();
-                        break;
                     case "Reviews" :
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutTabs, rv).commit();
                         break;
@@ -202,6 +199,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
                 cartBundle.putString("itemName", itemName.getText().toString());
                 cartBundle.putString("noSpaces", itemLoc);
                 cartBundle.putString("price", price.getText().toString());
+                cartBundle.putString("activity", "Item Page");
                 cartBundle.putStringArrayList("nList", itemNameList);
                 cartBundle.putStringArrayList("pList", itemPriceList);
                 cartBundle.putStringArrayList("qList", itemQuantityList);
@@ -350,11 +348,15 @@ public void getReviewInfo(String itemName){
                 cartBundle.putString("itemName", "NO_ITEM");
                 cartBundle.putString("noSpaces", "NO_ITEM");
                 cartBundle.putString("price", "$ 0.00");
+                cartBundle.putString("activity", "itemPageCartButton");
                 cartBundle.putStringArrayList("nList", HomeScreen.itemNameList);
                 cartBundle.putStringArrayList("pList", HomeScreen.itemPriceList);
                 cartBundle.putStringArrayList("qList", HomeScreen.itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemOrderHistory:
+                startActivity(new Intent(ItemPage.this, OrderHistory.class));
                 return true;
             case R.id.menuItemFavorites:
                 startActivity(new Intent(ItemPage.this, FavoritesList.class));

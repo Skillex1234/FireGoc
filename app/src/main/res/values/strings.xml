@@ -55,4 +55,7 @@
     <string name="confirm">Confirm Checkout</string>
     <string name="favs">Favorite Items</string>
     <string name="gotofav">Order Item</string>
+    <string name="orderhist">Order History</string>
+    <string name="ordername">Order Name</string>
+    <string name="vieworder">View Order</string>
 </resources>

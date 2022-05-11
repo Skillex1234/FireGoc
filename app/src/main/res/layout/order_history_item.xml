@@ -6,23 +6,23 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textViewFaveName"
+        android:id="@+id/textViewOrderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textSize="20sp"
+        android:text="@string/ordername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonFavPage"
+        android:id="@+id/buttonViewOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#FF5722"
-        android:text="@string/gotofav"
+        android:text="@string/vieworder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

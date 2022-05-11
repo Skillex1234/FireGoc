@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
@@ -40,8 +41,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
             textViewItemName = (TextView) view.findViewById(R.id.textViewItemNameCart);
             cartQuantity = (TextView) view.findViewById(R.id.textViewQuantity);
             textViewPrice = (TextView) view.findViewById(R.id.textViewPriceCart);
-            subButton = (Button) view.findViewById(R.id.buttonSubQuantity);
-            addButton = (Button) view.findViewById(R.id.buttonIncQuantity);
 
             subButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -93,6 +92,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
     @Override
     public int getItemCount(){
         return itemNames.size();
+    }
+
+    public void setData(List<String> n, List<String> q, List<String> p){
+        itemNames = n;
+        itemQuantities = q;
+        itemPrices = p;
+        notifyDataSetChanged();
     }
 
     public void clearCart() {

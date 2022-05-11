@@ -67,16 +67,30 @@ public class Checkout extends AppCompatActivity {
         String loc = fromItemPage.getString("noSpaces");
         String quantity = fromItemPage.getString("Amount");
         String price = fromItemPage.getString("price");
+        String actName = fromItemPage.getString("activity");
         price = price.substring(2);
         Double cost = Double.valueOf(quantity) * Double.valueOf(price);
         price = String.format("%.2f", cost);
 
-        ArrayList<String> itemNameList = fromItemPage.getStringArrayList("nameList");
+        ArrayList<String> itemNameList = fromItemPage.getStringArrayList("nList");
         ArrayList<String> itemQuantityList = fromItemPage.getStringArrayList("qList");
         ArrayList<String> itemPriceList = fromItemPage.getStringArrayList("pList");
 
-        if(savedInstanceState != null) {
+        if(savedInstanceState != null || actName.equals("history")) {
+            // Arraylist for storing reversed elements
+            /*ArrayList<String> reversePriceList = new ArrayList<String>();
+            for (int i = itemPriceList.size() - 1; i >= 0; i--) {
+
+                // Append the elements in reverse order
+                reversePriceList.add(itemPriceList.get(i));
+            }
+            itemPriceList = reversePriceList;*/
+            for(int i = 0; i < itemNameList.size(); i++){
+                double d = (Double.valueOf(itemPriceList.get(i)) * Double.valueOf(itemQuantityList.get(i)));
+                itemPriceList.set(i, Double.toString(d).format("%.2f", d));
+            }
             HomeScreen.ourList.restoreItemList(itemNameList, itemQuantityList, itemPriceList);
+            adapter.setData(HomeScreen.ourList.getItemName(), HomeScreen.ourList.getItemQuantity(), itemPriceList);
         }
 
         if(HomeScreen.ourList.getItemName().contains(name)){
@@ -141,7 +155,6 @@ public class Checkout extends AppCompatActivity {
                     Intent i = new Intent(Checkout.this, Payment.class);
                     i.putExtras(priceBundle);
                     startActivity(i);
-                    adapter.clearCart();
                     textViewSubtotal.setText("$ 0.00");
                     textViewTax.setText("$ 0.00");
                     textViewTotal.setText("$ 0.00");
@@ -175,15 +188,6 @@ public class Checkout extends AppCompatActivity {
         });
 
         enableSwipeToDeleteAndUndo();
-
-        updateTotal = findViewById(R.id.buttonUpdateTotals);
-        updateTotal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                updateSubtotalAndStuff();
-            }
-        });
-
 
         //add data to list
 //        Bundle fromItemPage = getIntent().getExtras();
@@ -283,6 +287,7 @@ public class Checkout extends AppCompatActivity {
         textViewTax.setText("$ " + taxString);
         textViewTotal.setText("$ " + totalString);
     }
+
 
 
 

@@ -17,6 +17,9 @@
         android:id="@+id/menuItemFavorites"
         android:title="@string/favs" />
     <item
+        android:id="@+id/menuItemOrderHistory"
+        android:title="@string/orderhist" />
+    <item
         android:id="@+id/menuItemLogout"
         android:title="@string/logout" />
 </menu>

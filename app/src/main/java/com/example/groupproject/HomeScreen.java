@@ -50,6 +50,7 @@ public class HomeScreen extends AppCompatActivity {
     public static ArrayList<String> itemQuantityList = new ArrayList<String>();
     public static ArrayList<String> itemPriceList = new ArrayList<String>();
     public static ArrayList<String> favoriteItems = new ArrayList<>();
+    public static List<String> orderList = new ArrayList<>();
 
 
     @Override
@@ -205,13 +206,31 @@ public class HomeScreen extends AppCompatActivity {
         //Initialize favorites list from firebase
         FirebaseDatabase fb = FirebaseDatabase.getInstance();
         DatabaseReference ref = fb.getReference();
-        DatabaseReference favRef = ref.child("Users").child(Login.username).child("Favorites");
+        String username = Login.username;
+        DatabaseReference favRef = ref.child("Users").child(username).child("Favorites");
         favRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()){
                     String fav = ds.getValue().toString();
                     favoriteItems.add(fav);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        //initialize orderList
+        DatabaseReference ohRef = ref.child("Users").child(Login.username).child("Orders");
+        ohRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds : snapshot.getChildren()){
+                    String order = ds.getKey();
+                    orderList.add(order);
                 }
             }
 
@@ -259,11 +278,15 @@ public class HomeScreen extends AppCompatActivity {
                 cartBundle.putString("itemName", "NO_ITEM");
                 cartBundle.putString("noSpaces", "NO_ITEM");
                 cartBundle.putString("price", "$ 0.00");
+                cartBundle.putString("activity", "Home Screen");
                 cartBundle.putStringArrayList("nList", itemNameList);
                 cartBundle.putStringArrayList("pList", itemPriceList);
                 cartBundle.putStringArrayList("qList", itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemOrderHistory:
+                startActivity(new Intent(HomeScreen.this, OrderHistory.class));
                 return true;
             case R.id.menuItemFavorites:
                 startActivity(new Intent(HomeScreen.this, FavoritesList.class));

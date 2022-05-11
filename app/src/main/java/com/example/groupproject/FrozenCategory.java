@@ -205,11 +205,15 @@ public class FrozenCategory extends AppCompatActivity {
                 cartBundle.putString("itemName", "NO_ITEM");
                 cartBundle.putString("noSpaces", "NO_ITEM");
                 cartBundle.putString("price", "$ 0.00");
+                cartBundle.putString("activity", "Category");
                 cartBundle.putStringArrayList("nList", HomeScreen.itemNameList);
                 cartBundle.putStringArrayList("pList", HomeScreen.itemPriceList);
                 cartBundle.putStringArrayList("qList", HomeScreen.itemQuantityList);
                 cartPage.putExtras(cartBundle);
                 startActivity(cartPage);
+                return true;
+            case R.id.menuItemOrderHistory:
+                startActivity(new Intent(FrozenCategory.this, OrderHistory.class));
                 return true;
             case R.id.menuItemFavorites:
                 startActivity(new Intent(FrozenCategory.this, FavoritesList.class));
