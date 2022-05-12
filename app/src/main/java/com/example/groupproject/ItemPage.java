@@ -336,6 +336,7 @@ public void getReviewInfo(String itemName){
                 HomeScreen.itemQuantityList.clear();
                 HomeScreen.adapter.clearItems();
                 HomeScreen.favoriteItems.clear();
+                HomeScreen.orderList.clear();
                 HomeScreen.adapter.notifyDataSetChanged();
                 finishAffinity();
                 startActivity(i);

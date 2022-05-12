@@ -266,6 +266,7 @@ public class HomeScreen extends AppCompatActivity {
                 itemQuantityList.clear();
                 adapter.clearItems();
                 favoriteItems.clear();
+                orderList.clear();
                 adapter.notifyDataSetChanged();
                 finishAffinity();
                 startActivity(i);

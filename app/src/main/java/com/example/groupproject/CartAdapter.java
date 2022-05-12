@@ -33,8 +33,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
         public TextView textViewItemName;
         public TextView cartQuantity;
         public TextView textViewPrice;
-        public Button subButton;
-        public Button addButton;
+
 
         public MyViewHolder(View view){
             super(view);
@@ -42,28 +41,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
             cartQuantity = (TextView) view.findViewById(R.id.textViewQuantity);
             textViewPrice = (TextView) view.findViewById(R.id.textViewPriceCart);
 
-            subButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(Integer.valueOf(cartQuantity.getText().toString()) > 1){
-                        HomeScreen.ourList.updateItemQuantity(textViewItemName.getText().toString(), -1);
-                        HomeScreen.adapter.notifyDataSetChanged();
-                    }
-                    else if (Integer.valueOf(cartQuantity.getText().toString()) == 1){
-                        deleteItem(HomeScreen.ourList.getItemName().indexOf(textViewItemName.getText().toString()));
-                        HomeScreen.adapter.notifyDataSetChanged();
-                    }
-                }
-            });
-
-            addButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    HomeScreen.ourList.updateItemQuantity(textViewItemName.getText().toString(), 1);
-                    HomeScreen.adapter.notifyDataSetChanged();
-
-                }
-            });
         }
     }
 
