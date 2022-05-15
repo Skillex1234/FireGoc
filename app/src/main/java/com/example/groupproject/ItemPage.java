@@ -241,6 +241,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
 
                     favorite.setImageResource(R.drawable.ic_baseline_star_border_24);
                     isFavorited = false;
+                    Toast.makeText(ItemPage.this, "Removed from favorites", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     String keyFav = dbRef.child("Users").child(Login.username).child("Favorites").push().getKey();
@@ -250,6 +251,7 @@ public class ItemPage extends AppCompatActivity implements AdapterView.OnItemSel
                     isFavorited = true;
                     favs.put(keyFav, itemPage.getString("item_name_with_spaces"));
                     dbRef.child("Users").child(Login.username).child("Favorites").updateChildren(favs);
+                    Toast.makeText(ItemPage.this, "Added to favorites", Toast.LENGTH_SHORT).show();
                 }
             }
         });
